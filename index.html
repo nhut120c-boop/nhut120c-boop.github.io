@@ -11,19 +11,30 @@ title: "Trang chủ"
 </div>
 
 <section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Case File · Opened 2026</p>
-    <h1>{{ site.title }}</h1>
-    <p class="typeline">
-      <span class="typeline__prompt">&gt;</span>
-      <span class="typeline__text" id="typeline-text"></span><span class="typeline__cursor">_</span>
-    </p>
-    <p class="tagline">
-      Sinh viên An toàn thông tin tại KMA, đang xây nền tảng vững cho hướng
-      <strong>Blue Team / SOC / DFIR</strong>. Học qua thực hành: CTF, lab, và note kỹ thuật —
-      mục tiêu bắt đầu từ SOC rồi tiến sâu hơn vào điều tra số và ứng phó sự cố.
-    </p>
+  <div class="wrap hero__row">
+    <div class="hero__main">
+      <p class="eyebrow">Case File · Opened 2026</p>
+      <h1>{{ site.title }}</h1>
+      <p class="typeline">
+        <span class="typeline__prompt">&gt;</span>
+        <span class="typeline__text" id="typeline-text"></span><span class="typeline__cursor">_</span>
+      </p>
+      <p class="tagline">
+        Sinh viên An toàn thông tin tại KMA, đang xây nền tảng vững cho hướng
+        <strong>Blue Team / SOC / DFIR</strong>. Học qua thực hành: CTF, lab, và note kỹ thuật —
+        mục tiêu bắt đầu từ SOC rồi tiến sâu hơn vào điều tra số và ứng phó sự cố.
+      </p>
+    </div>
 
+    <div class="hero__photo">
+      <div class="photo-card">
+        <img src="{{ '/assets/images/avatar.jpg' | relative_url }}" alt="{{ site.title }}">
+        <span class="photo-card__tag">SUBJECT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
     <div class="status-strip">
       <div><span>Role</span><strong>{{ site.role }}</strong></div>
       <div><span>Org</span><strong>{{ site.org }}</strong></div>

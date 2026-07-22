@@ -12,12 +12,15 @@
 </head>
 <body>
   <div id="site-loader" class="loader">
-    <svg class="loader__yinyang" viewBox="0 0 200 200" width="72" height="72" aria-hidden="true">
-      <circle cx="100" cy="100" r="94" fill="#EDE9DD" stroke="#D9A441" stroke-width="4"/>
-      <path d="M100,6 A47,47 0 0,1 100,100 A47,47 0 0,0 100,194 A94,94 0 0,0 100,6 Z" fill="#0B0E14"/>
-      <circle cx="100" cy="53" r="15" fill="#0B0E14"/>
-      <circle cx="100" cy="147" r="15" fill="#EDE9DD"/>
-    </svg>
+    <div class="loader__inner">
+      <svg class="loader__yinyang" viewBox="0 0 200 200" width="150" height="150" aria-hidden="true">
+        <circle cx="100" cy="100" r="94" fill="#EDE9DD" stroke="#D9A441" stroke-width="4"/>
+        <path d="M100,6 A47,47 0 0,1 100,100 A47,47 0 0,0 100,194 A94,94 0 0,0 100,6 Z" fill="#0B0E14"/>
+        <circle cx="100" cy="53" r="15" fill="#0B0E14"/>
+        <circle cx="100" cy="147" r="15" fill="#EDE9DD"/>
+      </svg>
+      <p class="loader__label">OPENING CASE FILE…</p>
+    </div>
   </div>
   {% include nav.html %}
   <main>
