@@ -3,6 +3,26 @@
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---------------- Page loader (yin-yang) ---------------- */
+  var loader = document.getElementById("site-loader");
+  if (loader) {
+    var minDelay = reduceMotion ? 150 : 550;
+    var hideLoader = function () {
+      loader.classList.add("is-hidden");
+      setTimeout(function () {
+        if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 500);
+    };
+    var start = Date.now();
+    window.addEventListener("load", function () {
+      var elapsed = Date.now() - start;
+      var wait = Math.max(0, minDelay - elapsed);
+      setTimeout(hideLoader, wait);
+    });
+    /* fallback in case load never fires cleanly */
+    setTimeout(hideLoader, 3500);
+  }
+
   /* ---------------- Typewriter (home page status line) ---------------- */
   var typeEl = document.getElementById("typeline-text");
   if (typeEl) {
