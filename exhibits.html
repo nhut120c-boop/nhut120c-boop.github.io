@@ -1,0 +1,44 @@
+---
+layout: default
+title: "Exhibits"
+permalink: /exhibits/
+---
+
+<section class="hero" style="padding-bottom:30px;">
+  <div class="wrap">
+    <p class="eyebrow">Case File · Exhibits</p>
+    <h1 style="font-size:clamp(28px,5vw,42px);">Thành tích</h1>
+    <p class="tagline">
+      Nơi lưu lại các thành tích, giải thưởng và cột mốc trong quá trình học và thi đấu.
+    </p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><span class="idx">A</span><h2>Đã ghi nhận</h2></div>
+
+    {% for e in site.data.exhibits.featured %}
+    <div class="exhibit-featured">
+      <span class="stamp">{{ e.stamp }}</span>
+      <h3>{{ e.title }}</h3>
+      <p>{{ e.description }}</p>
+      <div class="meta">{{ e.date }}{% if e.meta %} · {{ e.meta }}{% endif %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><span class="idx">B</span><h2>Đang chờ cập nhật</h2></div>
+    <div class="exhibit-grid">
+      {% for p in site.data.exhibits.pending %}
+      <div class="exhibit-pending">
+        <span class="lbl">{{ p }}</span>
+        <span class="status">Pending</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

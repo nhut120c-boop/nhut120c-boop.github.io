@@ -1,0 +1,32 @@
+# ============================================================
+# EXHIBITS — dữ liệu trang "Thành tích".
+# Đây là nơi DUY NHẤT bạn cần sửa khi có giải/thành tích mới.
+# Không cần đụng vào HTML/CSS.
+# ============================================================
+
+# Thành tích đã có (đội / cá nhân). Thêm 1 khối mới vào dưới cùng
+# theo đúng format là sẽ tự lên trang /exhibits/.
+featured:
+  - title: "NovaRun — CTF Team"
+    stamp: "TEAM LEAD"
+    date: "2025 — hiện tại"
+    description: >
+      Sáng lập và dẫn dắt NovaRun, đội CTF tập trung học qua thi đấu ở các
+      giải khu vực và quốc tế. Tổ chức việc luyện tập, phân công hạng mục
+      (forensics / web / reverse...), và viết lại writeup sau mỗi giải.
+    meta: "Vai trò: Team Lead · Repo: novactf-2026"
+
+  # Ví dụ thêm 1 thành tích cá nhân mới — copy khối dưới, bỏ dấu #, điền thông tin:
+  # - title: "Tên giải thi đấu"
+  #   stamp: "TOP 1"                # hạng / danh hiệu, hiển thị dạng con dấu
+  #   date: "2026"
+  #   description: >
+  #     Mô tả ngắn: giải gì, thi cùng ai, hạng mục nào, điểm nổi bật.
+  #   meta: "Hạng mục: Forensics · Điểm: 950"
+
+# Các ô "đang chờ cập nhật" — hiển thị dạng placeholder có viền đứt nét.
+# Xoá bớt dòng nào khi đã có thành tích thật thay vào featured ở trên.
+pending:
+  - "Giải CTF cá nhân"
+  - "Chứng chỉ / Certification"
+  - "Bug bounty / CVE"

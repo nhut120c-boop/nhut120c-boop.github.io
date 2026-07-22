@@ -1,0 +1,37 @@
+---
+layout: default
+title: "Case Log"
+permalink: /log/
+---
+
+<section class="hero" style="padding-bottom:30px;">
+  <div class="wrap">
+    <p class="eyebrow">Case File · Log</p>
+    <h1 style="font-size:clamp(28px,5vw,42px);">Case Log</h1>
+    <p class="tagline">
+      Writeup CTF, note kỹ thuật và nhật ký học tập.
+    </p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="log-list">
+      {% for post in site.posts %}
+      <div class="log-row">
+        <div class="date">{{ post.date | date: "%Y-%m-%d" }}</div>
+        <div class="entry">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          {% if post.excerpt %}<div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
+        </div>
+        <div class="tags">
+          {% for t in post.tags %}<span class="pill">{{ t }}</span>{% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if site.posts.size == 0 %}
+    <p style="color:var(--paper-dim);">Chưa có bài viết nào. Thêm file mới trong <code style="font-family:var(--font-mono);color:var(--evidence);">_posts/</code>.</p>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,50 @@
+title: "Lê Minh Nhựt"
+short_name: "LMN"
+tagline: "InfoSec Student — Blue Team / SOC / DFIR"
+description: "Case file & log của Lê Minh Nhựt — sinh viên An toàn thông tin tại KMA, Blue Team / SOC / DFIR, đội trưởng CTF team NovaRun."
+email: nhut120c@gmail.com
+github_username: nhut120c-boop
+url: ""
+baseurl: ""
+
+# ---- Bio / status line (dùng ở trang chủ) ----
+role: "Information Security Student"
+org: "KMA — Học viện Kỹ thuật Mật mã"
+team: "NovaRun (Team Lead)"
+focus_line: "Blue Team / SOC / DFIR / Incident Response"
+case_no: "LMN-2026"
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+permalink: /log/:year/:month/:day/:title/
+
+collections:
+  exhibits:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

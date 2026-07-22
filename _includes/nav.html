@@ -1,0 +1,11 @@
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}"><span class="dot"></span>{{ site.short_name }}</a>
+    <div class="tabs">
+      <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+      <a href="{{ '/log/' | relative_url }}" class="{% if page.url contains '/log' %}active{% endif %}">Case Log</a>
+      <a href="{{ '/exhibits/' | relative_url }}" class="{% if page.url contains '/exhibits' %}active{% endif %}">Exhibits</a>
+    </div>
+    <div class="case-id">CASE#{{ site.case_no }}</div>
+  </div>
+</nav>

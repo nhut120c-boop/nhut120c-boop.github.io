@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article>
+  <header class="post-header">
+    <div class="wrap">
+      <div class="post-meta">
+        LOG ENTRY · {{ page.date | date: "%Y-%m-%d" }}
+        {% if page.category %} · {{ page.category | upcase }}{% endif %}
+      </div>
+      <h1>{{ page.title }}</h1>
+      {% if page.tags %}
+      <div class="post-tags">
+        {% for t in page.tags %}<span class="pill">{{ t }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-content">
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </div>
+
+  <div class="post-footer">
+    <div class="wrap">
+      <a class="back-link" href="{{ '/log/' | relative_url }}">Quay lại Case Log</a>
+    </div>
+  </div>
+</article>

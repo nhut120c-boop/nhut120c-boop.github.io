@@ -1,0 +1,128 @@
+---
+layout: default
+title: "Trang chủ"
+---
+
+<div class="scan-banner" aria-hidden="true">
+  <div class="scan-banner__grid"></div>
+  <div class="scan-banner__sweep"></div>
+  <div class="scan-banner__tape"></div>
+  <div class="scan-banner__stamp">CASE<br>OPENED<br>2026</div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Case File · Opened 2026</p>
+    <h1>{{ site.title }}</h1>
+    <p class="typeline">
+      <span class="typeline__prompt">&gt;</span>
+      <span class="typeline__text" id="typeline-text"></span><span class="typeline__cursor">_</span>
+    </p>
+    <p class="tagline">
+      Sinh viên An toàn thông tin tại KMA, đang xây nền tảng vững cho hướng
+      <strong>Blue Team / SOC / DFIR</strong>. Học qua thực hành: CTF, lab, và note kỹ thuật —
+      mục tiêu bắt đầu từ SOC rồi tiến sâu hơn vào điều tra số và ứng phó sự cố.
+    </p>
+
+    <div class="status-strip">
+      <div><span>Role</span><strong>{{ site.role }}</strong></div>
+      <div><span>Org</span><strong>{{ site.org }}</strong></div>
+      <div><span>Team</span><strong>{{ site.team }}</strong></div>
+      <div><span>Focus</span><strong>{{ site.focus_line }}</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><span class="idx">01</span><h2>Focus Areas</h2></div>
+    <div class="exhibit-grid">
+      <div class="exhibit-card">
+        <span class="tag">EXHIBIT-01</span>
+        <h3>SOC Alert Triage</h3>
+        <p>Phân tích cảnh báo, phân loại mức độ ưu tiên, phòng thủ chủ động.</p>
+      </div>
+      <div class="exhibit-card">
+        <span class="tag">EXHIBIT-02</span>
+        <h3>DFIR</h3>
+        <p>Digital Forensics và Incident Response — thu thập, phân tích bằng chứng số.</p>
+      </div>
+      <div class="exhibit-card">
+        <span class="tag">EXHIBIT-03</span>
+        <h3>Malware Analysis</h3>
+        <p>Phân tích mã độc ở mức cơ bản: hành vi, indicator, static/dynamic analysis.</p>
+      </div>
+      <div class="exhibit-card">
+        <span class="tag">EXHIBIT-04</span>
+        <h3>Windows Forensics</h3>
+        <p>Artifact hệ thống Windows: registry, event log, filesystem timeline.</p>
+      </div>
+      <div class="exhibit-card">
+        <span class="tag">EXHIBIT-05</span>
+        <h3>Network Traffic Analysis</h3>
+        <p>Đọc và phân tích lưu lượng mạng, phát hiện dấu hiệu bất thường.</p>
+      </div>
+      <div class="exhibit-card">
+        <span class="tag">EXHIBIT-06</span>
+        <h3>CTF & Practical Labs</h3>
+        <p>Writeup CTF và lab thực chiến để rèn tư duy điều tra, tài liệu hoá.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><span class="idx">02</span><h2>Tools &amp; Skills</h2></div>
+
+    <div class="pill-group">
+      <h4>Tools</h4>
+      <div class="pills">
+        <span class="pill">Wireshark</span>
+        <span class="pill">Autopsy</span>
+        <span class="pill">FTK Imager</span>
+        <span class="pill">Windows</span>
+        <span class="pill">Linux</span>
+        <span class="pill">Git</span>
+      </div>
+    </div>
+
+    <div class="pill-group">
+      <h4>Languages / Scripting</h4>
+      <div class="pills">
+        <span class="pill">Python</span>
+        <span class="pill">C++</span>
+        <span class="pill">Bash</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><span class="idx">03</span><h2>Featured Repositories</h2></div>
+    <div class="repo-list">
+      {% for r in site.data.repos %}
+      <div class="repo-row">
+        <div>
+          <div class="name"><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.name }}</a></div>
+          <div class="desc">{{ r.desc }}</div>
+        </div>
+        <div class="lang">{{ r.lang }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="block-head"><span class="idx">04</span><h2>Contact</h2></div>
+    <div class="contact-row">
+      <a href="mailto:{{ site.email }}">✉ {{ site.email }}</a>
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">⌥ @{{ site.github_username }}</a>
+      <a href="{{ '/log/' | relative_url }}">▤ Case Log</a>
+      <a href="{{ '/exhibits/' | relative_url }}">★ Exhibits</a>
+    </div>
+  </div>
+</section>
