@@ -23,9 +23,20 @@ permalink: /exhibits/
       <span class="stamp">{{ e.stamp }}</span>
       <h3>{{ e.title }}</h3>
       <p>{{ e.description }}</p>
+
+      {% if e.cer %}
+      <div class="cer-preview" style="margin: 18px 0;">
+        {% if e.cer contains '.pdf' %}
+          <iframe src="{{ e.cer | relative_url }}" width="100%" height="450px" style="border: 1px solid var(--ink-line); border-radius: 8px; background: #fff;"></iframe>
+        {% else %}
+          <img src="{{ e.cer | relative_url }}" alt="{{ e.title }}" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--ink-line);">
+        {% endif %}
+      </div>
+      {% endif %}
+
       <div class="meta">
         {{ e.date }}{% if e.meta %} · {{ e.meta }}{% endif %}
-        {% if e.cer %} · <a href="{{ e.cer | relative_url }}" target="_blank">📄 View Certificate</a>{% endif %}
+        {% if e.cer %} · <a href="{{ e.cer | relative_url }}" target="_blank">📄 Xem toàn màn hình</a>{% endif %}
       </div>
     </div>
     {% endfor %}
