@@ -32,12 +32,12 @@ featured:
     meta: "Lĩnh vực: Security / IT"
     cer: "/cer/certified_certificate.pdf"
 
-  - title: "Achievement 190"
-    stamp: "ACHIEVEMENT"
+  - title: "BroncoCTF 2026"
+    stamp: "CERTIFICATE"
     date: "2026"
     description: >
-      Ghi nhận thành tích / Điểm số 190.
-    meta: "Lĩnh vực: Training"
+      Chứng nhận tham gia và đạt thành tích tại giải thi đấu BroncoCTF 2026.
+    meta: "Lĩnh vực: CTF"
     cer: "/cer/190.png"
 
 # Các ô "đang chờ cập nhật" — hiển thị dạng placeholder có viền đứt nét.
