@@ -14,7 +14,16 @@ featured:
       Sáng lập và dẫn dắt NovaRun, đội CTF tập trung học qua thi đấu ở các
       giải khu vực và quốc tế. Tổ chức việc luyện tập, phân công hạng mục
       (forensics / web / reverse...), và viết lại writeup sau mỗi giải.
+      <br><strong>CTFTime:</strong> <a href="https://ctftime.org/team/435904" target="_blank">https://ctftime.org/team/435904</a>
     meta: "Vai trò: Team Lead · Repo: novactf-2026"
+
+  - title: "V1T CTF 2026"
+    stamp: "CERTIFICATE"
+    date: "2026"
+    description: >
+      Certificate of Participation - V1T CTF 2026. Player: zerod (Team: NovaRun). Rank: 136th / 951.
+    meta: "Lĩnh vực: CTF"
+    cer: "/cer/v1tctf2026.png"
 
   - title: "TJCTF 2026 Certificate"
     stamp: "CERTIFICATE"
