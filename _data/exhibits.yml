@@ -36,8 +36,16 @@ featured:
     stamp: "CERTIFICATE"
     date: "2026"
     description: >
-      Chứng nhận tham gia và đạt thành tích tại giải thi đấu BroncoCTF 2026.
+      Santa Clara University's 7th CTF: BroncoCTF 2026. Player zeroD (Team NovaRun). Đạt Hạng #94, hoàn thành 40/45 thử thách.
     meta: "Lĩnh vực: CTF"
+    cer: "/cer/broncoctf.png"
+
+  - title: "Achievement 190"
+    stamp: "ACHIEVEMENT"
+    date: "2026"
+    description: >
+      Ghi nhận thành tích / Điểm số 190.
+    meta: "Lĩnh vực: Training"
     cer: "/cer/190.png"
 
 # Các ô "đang chờ cập nhật" — hiển thị dạng placeholder có viền đứt nét.
