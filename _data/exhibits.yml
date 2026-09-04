@@ -1,0 +1,48 @@
+# ============================================================
+# EXHIBITS — dữ liệu trang "Thành tích".
+# Đây là nơi DUY NHẤT bạn cần sửa khi có giải/thành tích mới.
+# Không cần đụng vào HTML/CSS.
+# ============================================================
+
+# Thành tích đã có (đội / cá nhân). Thêm 1 khối mới vào dưới cùng
+# theo đúng format là sẽ tự lên trang /exhibits/.
+featured:
+  - title: "NovaRun — CTF Team"
+    stamp: "TEAM LEAD"
+    date: "2025 — hiện tại"
+    description: >
+      Sáng lập và dẫn dắt NovaRun, đội CTF tập trung học qua thi đấu ở các
+      giải khu vực và quốc tế. Tổ chức việc luyện tập, phân công hạng mục
+      (forensics / web / reverse...), và viết lại writeup sau mỗi giải.
+    meta: "Vai trò: Team Lead · Repo: novactf-2026"
+
+  - title: "TJCTF 2026 Certificate"
+    stamp: "CERTIFICATE"
+    date: "2026"
+    description: >
+      Chứng nhận hoàn thành và tham gia giải thi đấu TJCTF 2026.
+    meta: "Lĩnh vực: CTF"
+    cer: "/cer/tjctf-2026-certificate-Le_Minh_Nhut (1).pdf"
+
+  - title: "Professional Certification"
+    stamp: "CERTIFIED"
+    date: "2026"
+    description: >
+      Chứng nhận chuyên môn (Certified Certificate).
+    meta: "Lĩnh vực: Security / IT"
+    cer: "/cer/certified_certificate.pdf"
+
+  - title: "Achievement 190"
+    stamp: "ACHIEVEMENT"
+    date: "2026"
+    description: >
+      Ghi nhận thành tích / Điểm số 190.
+    meta: "Lĩnh vực: Training"
+    cer: "/cer/190.png"
+
+# Các ô "đang chờ cập nhật" — hiển thị dạng placeholder có viền đứt nét.
+# Xoá bớt dòng nào khi đã có thành tích thật thay vào featured ở trên.
+pending:
+  - "Giải CTF cá nhân"
+  - "Chứng chỉ / Certification khác"
+  - "Bug bounty / CVE"
