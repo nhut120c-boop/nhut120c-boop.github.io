@@ -49,13 +49,7 @@ featured:
     meta: "Lĩnh vực: CTF"
     cer: "/cer/broncoctf.png"
 
-  - title: "Achievement 190"
-    stamp: "ACHIEVEMENT"
-    date: "2026"
-    description: >
-      Ghi nhận thành tích / Điểm số 190.
-    meta: "Lĩnh vực: Training"
-    cer: "/cer/190.png"
+
 
 # Các ô "đang chờ cập nhật" — hiển thị dạng placeholder có viền đứt nét.
 # Xoá bớt dòng nào khi đã có thành tích thật thay vào featured ở trên.
