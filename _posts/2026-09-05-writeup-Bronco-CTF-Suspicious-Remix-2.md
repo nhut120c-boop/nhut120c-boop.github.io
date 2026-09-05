@@ -3,6 +3,7 @@ layout: post
 title: "Bronco CTF : Suspicious Remix 2"
 tags: [writeup, ctf]
 ---
+{% raw %}
 
 ## Tên challenge: Suspicious Remix 2
 ## Tác giả: blunderous_wonders
@@ -68,3 +69,5 @@ mình cat file got_u_so_good.txt và được flag là ```bronco{7h3y_g07_y0u_4g
 ---
 ZeroD 
 
+
+{% endraw %}

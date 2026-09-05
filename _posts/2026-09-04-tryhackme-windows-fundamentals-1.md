@@ -3,6 +3,7 @@ layout: post
 title: "Tryhackme: Windows Fundamentals 1"
 tags: [writeup, ctf, study]
 ---
+{% raw %}
 # Lab-Windows-Fundamentals-1
 
 ở phần này, em đọc nội dung lab thì thấy windows hiện tại có nhiều phiên bản khác nhau, trong đó bản phổ biến là home và pro
@@ -618,3 +619,5 @@ ctrl + shift + esc
 
 
 
+
+{% endraw %}

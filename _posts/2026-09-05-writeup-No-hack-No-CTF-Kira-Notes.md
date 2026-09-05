@@ -3,6 +3,7 @@ layout: post
 title: "No hack No CTF : Kira - Notes"
 tags: [writeup, ctf]
 ---
+{% raw %}
 
 ## Tên challenge: Kira - Notes
 ## Tác giả: UmmIt Kin
@@ -112,3 +113,5 @@ và được flag khi unzip là
 <img width="1536" height="863" alt="image" src="https://github.com/user-attachments/assets/769740d9-93d8-421a-a376-8e167c2f1de0" />
 
 
+
+{% endraw %}

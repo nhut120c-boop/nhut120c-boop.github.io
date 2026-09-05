@@ -3,6 +3,7 @@ layout: post
 title: "Tryhackme: Investigating Windows"
 tags: [writeup, ctf, study]
 ---
+{% raw %}
 # Investigating-Windows
 câu 1
 em vào system information
@@ -335,3 +336,5 @@ như cái ảnh chụp file hosts ở câu 13 lúc nãy, anh thấy rõ hacker �
 
 google.com
 
+
+{% endraw %}

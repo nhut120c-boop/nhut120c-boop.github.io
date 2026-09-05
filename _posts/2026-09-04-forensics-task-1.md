@@ -3,6 +3,7 @@ layout: post
 title: "Forensics: Task 1"
 tags: [writeup, ctf, study]
 ---
+{% raw %}
 Task Steganography
 
 File type: 
@@ -706,3 +707,5 @@ def doctin(anh, text):
 
 
 
+
+{% endraw %}

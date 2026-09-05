@@ -3,6 +3,7 @@ layout: post
 title: "RIFFHACK CTF : Vecna's Memory Palace"
 tags: [writeup, ctf]
 ---
+{% raw %}
 
 Tên chall: Vecna's Memory Palace
 
@@ -189,3 +190,5 @@ rồi điền các thông tin vào web
 ta được flag **bitctf{{v3cn45_m3m0ry_p4l4c3_br34ch}}**
 
 
+
+{% endraw %}

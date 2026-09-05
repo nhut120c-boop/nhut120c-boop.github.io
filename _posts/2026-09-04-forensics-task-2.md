@@ -3,6 +3,7 @@ layout: post
 title: "Forensics: Task 2"
 tags: [writeup, ctf, study]
 ---
+{% raw %}
 # Task-2-Forensics
 Tìm hiểu về Window Registry: thay vì mỗi phần mềm tự tạo file config rời rạc, win gom hết mọi thông tin cấu hình từ phần cứng, phần mềm, user đến các chính sách bảo mật vào chung một cơ sở dữ liệu trung tâm. các file này lưu dưới dạng nhị phân, thường nằm sâu trong thư mục c:\windows\system32\config
 
@@ -1010,3 +1011,5 @@ Chall:
 https://github.com/nhut120c-boop/study-notes/tree/main/Forensics/Basic-Disk
 ```
 
+
+{% endraw %}
