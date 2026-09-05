@@ -6,6 +6,4 @@ tags: [note, study]
 {% raw %}
 # Registry 
 
-
 {% endraw %}
-

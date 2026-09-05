@@ -4,7 +4,6 @@ title: "GPN CTF : custom server"
 tags: [writeup, ctf]
 ---
 {% raw %}
-
 customer-service finished (Miscellaneous) by s1nn105
 ---
 
@@ -273,6 +272,4 @@ GPNCTF{Ex-un4-11nE4-VacUa-53QUI7uR-QuOdLiBe7}
 
 **ZeroD**
 
-
 {% endraw %}
-

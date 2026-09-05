@@ -6,7 +6,4 @@ tags: [writeup, ctf]
 {% raw %}
 
 
-
-
 {% endraw %}
-

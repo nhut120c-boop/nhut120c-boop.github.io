@@ -4,7 +4,6 @@ title: "RIFFHACK CTF : Black Mirror Memory Fragments"
 tags: [writeup, ctf]
 ---
 {% raw %}
-
 Tên chall: Wiped Conversation
 
 Mảng: Forensics
@@ -196,6 +195,4 @@ ra được:
 rồi ghép các thông tin lại
 ta được flag **bitctf{{sm1th3r33n_thr34d_r3assembled_4cross_fragments}}**
 
-
 {% endraw %}
-

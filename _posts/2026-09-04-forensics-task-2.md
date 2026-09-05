@@ -1011,6 +1011,4 @@ Chall:
 https://github.com/nhut120c-boop/study-notes/tree/main/Forensics/Basic-Disk
 ```
 
-
 {% endraw %}
-

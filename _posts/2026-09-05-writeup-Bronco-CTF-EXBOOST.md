@@ -4,7 +4,6 @@ title: "Bronco CTF : EX-BOOST"
 tags: [writeup, ctf]
 ---
 {% raw %}
-
 ## Tên challenge: EX-BOOST
 ## Tác giả: blunderous_wonders
 ## Mảng: Forensics
@@ -61,6 +60,4 @@ Khoảnh khắc ném thử file lên Zsteg và thấy flag hiện ra ngay lập 
 
 Viết chiếc write-up này ra đây, xem như một cái tát gõ tỉnh bản thân. Kỹ năng có thể trau dồi, nhưng nếu đánh mất đi tư duy tỉnh táo từ những bước cơ sở, thì sẽ còn tiếp tục tự mua dây buộc mình. Nhìn lại cả một buổi tối quý giá bốc hơi tan tành chỉ vì một pha overthinking cồng kềnh, chạnh lòng và tiếc đứt ruột... bởi suy cho cùng, thời gian không chờ một ai.
 
-
 {% endraw %}
-

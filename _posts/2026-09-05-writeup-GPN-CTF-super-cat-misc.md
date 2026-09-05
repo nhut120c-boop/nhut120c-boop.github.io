@@ -4,7 +4,6 @@ title: "GPN CTF : super cat misc"
 tags: [writeup, ctf]
 ---
 {% raw %}
-
 superCAT finished (Miscellaneous) by s1nn105
 ---
 
@@ -286,6 +285,4 @@ GPNCTF{Rust_IS_ShiT_CHan6E_MY_MInd}
 ---
 **ZeroD**
 
-
 {% endraw %}
-
