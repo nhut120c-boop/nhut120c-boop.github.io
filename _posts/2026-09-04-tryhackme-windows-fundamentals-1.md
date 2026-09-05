@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: "Tryhackme: Windows Fundamentals 1"
-tags: [writeup, ctf, study]
+tags: [note, study]
 ---
 {% raw %}
 # Lab-Windows-Fundamentals-1
@@ -621,3 +621,4 @@ ctrl + shift + esc
 
 
 {% endraw %}
+

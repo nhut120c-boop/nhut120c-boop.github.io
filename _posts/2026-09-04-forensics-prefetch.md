@@ -1,10 +1,11 @@
 ﻿---
 layout: post
 title: "Forensics: Prefetch"
-tags: [writeup, ctf, study]
+tags: [note, study]
 ---
 {% raw %}
 # Prefetch 
 
 
 {% endraw %}
+

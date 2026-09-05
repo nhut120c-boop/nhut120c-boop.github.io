@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: "Tryhackme: Investigating Windows"
-tags: [writeup, ctf, study]
+tags: [note, study]
 ---
 {% raw %}
 # Investigating-Windows
@@ -338,3 +338,4 @@ google.com
 
 
 {% endraw %}
+

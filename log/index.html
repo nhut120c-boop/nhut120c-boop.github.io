@@ -16,21 +16,45 @@ permalink: /log/
 
 <section class="block">
   <div class="wrap">
+    <div class="block-head"><span class="idx">1</span><h2>CTF Writeups</h2></div>
     <div class="log-list">
       {% for post in site.posts %}
-      <div class="log-row">
-        <div class="date">{{ post.date | date: "%Y-%m-%d" }}</div>
-        <div class="entry">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          {% if post.repo_url %}
-            <a href="{{ post.repo_url }}" target="_blank" rel="noopener" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
-          {% endif %}
-          {% if post.excerpt %}<div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
+        {% if post.tags contains "writeup" %}
+        <div class="log-row">
+          <div class="date">{{ post.date | date: "%Y-%m-%d" }}</div>
+          <div class="entry">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            {% if post.repo_url %}
+              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
+            {% endif %}
+            {% if post.excerpt %}<div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
+          </div>
+          <div class="tags">
+            {% for t in post.tags %}<span class="pill">{{ t }}</span>{% endfor %}
+          </div>
         </div>
-        <div class="tags">
-          {% for t in post.tags %}<span class="pill">{{ t }}</span>{% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="block-head" style="margin-top: 40px;"><span class="idx">2</span><h2>Study Notes</h2></div>
+    <div class="log-list">
+      {% for post in site.posts %}
+        {% if post.tags contains "note" %}
+        <div class="log-row">
+          <div class="date">{{ post.date | date: "%Y-%m-%d" }}</div>
+          <div class="entry">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            {% if post.repo_url %}
+              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
+            {% endif %}
+            {% if post.excerpt %}<div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
+          </div>
+          <div class="tags">
+            {% for t in post.tags %}<span class="pill">{{ t }}</span>{% endfor %}
+          </div>
         </div>
-      </div>
+        {% endif %}
       {% endfor %}
     </div>
     {% if site.posts.size == 0 %}

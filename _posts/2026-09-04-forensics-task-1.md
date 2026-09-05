@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: "Forensics: Task 1"
-tags: [writeup, ctf, study]
+tags: [note, study]
 ---
 {% raw %}
 Task Steganography
@@ -709,3 +709,4 @@ def doctin(anh, text):
 
 
 {% endraw %}
+

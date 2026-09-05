@@ -1,10 +1,11 @@
 ﻿---
 layout: post
 title: "Forensics: Registry"
-tags: [writeup, ctf, study]
+tags: [note, study]
 ---
 {% raw %}
 # Registry 
 
 
 {% endraw %}
+

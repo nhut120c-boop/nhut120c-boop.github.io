@@ -1,29 +1,29 @@
----
-title: "Chào mừng đến Case Log"
+﻿---
+title: "ChÃ o má»«ng Ä‘áº¿n Case Log"
 tags: [note, meta]
 category: meta
-excerpt: "Bài viết đầu tiên — hướng dẫn nhanh cách viết một entry mới trong Case Log, kèm ví dụ đầy đủ các định dạng Markdown hay dùng."
+excerpt: "BÃ i viáº¿t Ä‘áº§u tiÃªn â€” hÆ°á»›ng dáº«n nhanh cÃ¡ch viáº¿t má»™t entry má»›i trong Case Log, kÃ¨m vÃ­ dá»¥ Ä‘áº§y Ä‘á»§ cÃ¡c Ä‘á»‹nh dáº¡ng Markdown hay dÃ¹ng."
 ---
 
-Đây là bài viết mẫu để test các định dạng Markdown mà trang blog hỗ trợ —
-y hệt cách viết README trên GitHub.
+ÄÃ¢y lÃ  bÃ i viáº¿t máº«u Ä‘á»ƒ test cÃ¡c Ä‘á»‹nh dáº¡ng Markdown mÃ  trang blog há»— trá»£ â€”
+y há»‡t cÃ¡ch viáº¿t README trÃªn GitHub.
 
-## Heading cấp 2
+## Heading cáº¥p 2
 
-Đoạn văn thường. Có thể **in đậm**, *in nghiêng*, hoặc `inline code` ngay trong câu.
+Äoáº¡n vÄƒn thÆ°á»ng. CÃ³ thá»ƒ **in Ä‘áº­m**, *in nghiÃªng*, hoáº·c `inline code` ngay trong cÃ¢u.
 
-### Heading cấp 3
+### Heading cáº¥p 3
 
-- Gạch đầu dòng thứ nhất
-- Gạch đầu dòng thứ hai
-- Gạch đầu dòng thứ ba
+- Gáº¡ch Ä‘áº§u dÃ²ng thá»© nháº¥t
+- Gáº¡ch Ä‘áº§u dÃ²ng thá»© hai
+- Gáº¡ch Ä‘áº§u dÃ²ng thá»© ba
 
-1. Danh sách có số
-2. Mục thứ hai
+1. Danh sÃ¡ch cÃ³ sá»‘
+2. Má»¥c thá»© hai
 
 ---
 
-Dòng gạch ngang `---` ở trên dùng để ngăn cách các phần trong bài.
+DÃ²ng gáº¡ch ngang `---` á»Ÿ trÃªn dÃ¹ng Ä‘á»ƒ ngÄƒn cÃ¡ch cÃ¡c pháº§n trong bÃ i.
 
 ## Code block
 
@@ -39,32 +39,33 @@ $ autopsy --case CASE-2026-01 --add-image ./disk.img
 [+] Image mounted, starting timeline analysis...
 ```
 
-## Ảnh
+## áº¢nh
 
-Chèn ảnh giống hệt README — thay link bên dưới bằng ảnh thật của bạn
-(upload vào `assets/images/` trong repo, hoặc dùng link ngoài).
+ChÃ¨n áº£nh giá»‘ng há»‡t README â€” thay link bÃªn dÆ°á»›i báº±ng áº£nh tháº­t cá»§a báº¡n
+(upload vÃ o `assets/images/` trong repo, hoáº·c dÃ¹ng link ngoÃ i).
 
-![Mô tả ảnh](https://placehold.co/800x360/141A26/EDE9DD?text=Screenshot)
+![MÃ´ táº£ áº£nh](https://placehold.co/800x360/141A26/EDE9DD?text=Screenshot)
 
-## Trích dẫn
+## TrÃ­ch dáº«n
 
-> Ghi chú quan trọng hoặc trích một đoạn tham khảo có thể để trong blockquote như thế này.
+> Ghi chÃº quan trá»ng hoáº·c trÃ­ch má»™t Ä‘oáº¡n tham kháº£o cÃ³ thá»ƒ Ä‘á»ƒ trong blockquote nhÆ° tháº¿ nÃ y.
 
-## Bảng
+## Báº£ng
 
-| Artifact        | Vị trí                          | Ghi chú                  |
+| Artifact        | Vá»‹ trÃ­                          | Ghi chÃº                  |
 |------------------|----------------------------------|---------------------------|
-| Prefetch         | `C:\Windows\Prefetch`            | Lịch sử chạy chương trình |
-| Event Log        | `C:\Windows\System32\winevt`     | Log hệ thống / bảo mật    |
+| Prefetch         | `C:\Windows\Prefetch`            | Lá»‹ch sá»­ cháº¡y chÆ°Æ¡ng trÃ¬nh |
+| Event Log        | `C:\Windows\System32\winevt`     | Log há»‡ thá»‘ng / báº£o máº­t    |
 
 ## Link
 
-Tham khảo thêm tại [GitHub của mình](https://github.com/nhut120c-boop) hoặc
+Tham kháº£o thÃªm táº¡i [GitHub cá»§a mÃ¬nh](https://github.com/nhut120c-boop) hoáº·c
 [repo ctf-writeups](https://github.com/nhut120c-boop/ctf-writeups).
 
 ---
 
-**Cách thêm bài mới:** tạo file `.md` mới trong thư mục `_posts/` với tên dạng
-`YYYY-MM-DD-tieu-de.md`, thêm phần front matter (`title`, `tags`, `excerpt`) ở đầu
-giống bài này, rồi viết nội dung bên dưới. Không cần sửa code, push lên GitHub
-là bài tự lên trang `/log/`.
+**CÃ¡ch thÃªm bÃ i má»›i:** táº¡o file `.md` má»›i trong thÆ° má»¥c `_posts/` vá»›i tÃªn dáº¡ng
+`YYYY-MM-DD-tieu-de.md`, thÃªm pháº§n front matter (`title`, `tags`, `excerpt`) á»Ÿ Ä‘áº§u
+giá»‘ng bÃ i nÃ y, rá»“i viáº¿t ná»™i dung bÃªn dÆ°á»›i. KhÃ´ng cáº§n sá»­a code, push lÃªn GitHub
+lÃ  bÃ i tá»± lÃªn trang `/log/`.
+

@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: "Forensics: Tool"
-tags: [writeup, ctf, study]
+tags: [note, study]
 ---
 {% raw %}
 Disk Analysis & Autopsy
@@ -444,3 +444,4 @@ Benjamin DELPY (gentilkiwi)
 
 
 {% endraw %}
+

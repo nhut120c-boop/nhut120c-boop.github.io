@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: "Forensics: Task 2"
-tags: [writeup, ctf, study]
+tags: [note, study]
 ---
 {% raw %}
 # Task-2-Forensics
@@ -1013,3 +1013,4 @@ https://github.com/nhut120c-boop/study-notes/tree/main/Forensics/Basic-Disk
 
 
 {% endraw %}
+

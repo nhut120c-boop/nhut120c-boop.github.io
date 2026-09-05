@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: "Tryhackme: Windows Fundamentals 2"
-tags: [writeup, ctf, study]
+tags: [note, study]
 ---
 {% raw %}
 # Windows-Fundamentals-2
@@ -1164,3 +1164,4 @@ regedt32.exe
 
 
 {% endraw %}
+
