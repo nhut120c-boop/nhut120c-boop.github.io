@@ -21,10 +21,9 @@ permalink: /log/
       <div class="log-row">
         <div class="date">{{ post.date | date: "%Y-%m-%d" }}</div>
         <div class="entry">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           {% if post.repo_url %}
-            <a href="{{ post.repo_url }}" target="_blank" rel="noopener">{{ post.title }} ↗</a>
-          {% else %}
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a href="{{ post.repo_url }}" target="_blank" rel="noopener" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
           {% endif %}
           {% if post.excerpt %}<div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
         </div>
