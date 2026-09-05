@@ -1,10 +1,10 @@
-﻿---
+---
 layout: post
 title: "Tên giải CTF: Tên bài"
 tags: [writeup, ctf]
 ---
 {% raw %}
-> Đừng xóa dòng {% raw %} ở trên và {% endraw %} ở cuối bài nhé! Nó giúp code và flag không bị lỗi web.
+> Đừng xóa dòng raw ở trên và endraw ở cuối bài nhé! Nó giúp code và flag không bị lỗi web.
 
 ## 1. Challenge Description
 Viết mô tả hoặc đề bài ở đây...
