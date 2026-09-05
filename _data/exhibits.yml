@@ -1,12 +1,8 @@
 # ============================================================
 # EXHIBITS — dữ liệu trang "Thành tích".
-# Đây là nơi DUY NHẤT bạn cần sửa khi có giải/thành tích mới.
-# Không cần đụng vào HTML/CSS.
 # ============================================================
 
-# Thành tích đã có (đội / cá nhân). Thêm 1 khối mới vào dưới cùng
-# theo đúng format là sẽ tự lên trang /exhibits/.
-featured:
+ctf:
   - title: "NovaRun — CTF Team"
     stamp: "TEAM LEAD"
     date: "2025 — hiện tại"
@@ -41,14 +37,6 @@ featured:
     meta: "Lĩnh vực: CTF"
     cer: "/cer/tjctf-2026-certificate-Le_Minh_Nhut (1).pdf"
 
-  - title: "Professional Certification"
-    stamp: "CERTIFIED"
-    date: "2026"
-    description: >
-      Chứng nhận chuyên môn (Certified Certificate).
-    meta: "Lĩnh vực: Security / IT"
-    cer: "/cer/certified_certificate.pdf"
-
   - title: "BroncoCTF 2026"
     stamp: "CERTIFICATE"
     date: "2026"
@@ -57,10 +45,15 @@ featured:
     meta: "Lĩnh vực: CTF"
     cer: "/cer/broncoctf.png"
 
+academic:
+  - title: "Professional Certification"
+    stamp: "CERTIFIED"
+    date: "2026"
+    description: >
+      Chứng nhận chuyên môn (Certified Certificate).
+    meta: "Lĩnh vực: Security / IT"
+    cer: "/cer/certified_certificate.pdf"
 
-
-# Các ô "đang chờ cập nhật" — hiển thị dạng placeholder có viền đứt nét.
-# Xoá bớt dòng nào khi đã có thành tích thật thay vào featured ở trên.
 pending:
   - "Giải CTF cá nhân"
   - "Chứng chỉ / Certification khác"
