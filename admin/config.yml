@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: nhut120c-boop/nhut120c-boop.github.io
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "posts"
+    label: "Case Log (Bài viết & Writeup)"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Tiêu đề", name: "title", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["writeup", "ctf"]}
+      - {label: "Nội dung", name: "body", widget: "markdown"}
+
+  - name: "exhibits"
+    label: "Exhibits (Chứng chỉ & CTF)"
+    files:
+      - label: "Danh sách Exhibits"
+        name: "exhibits_data"
+        file: "_data/exhibits.yml"
+        fields:
+          - label: "CTF Exhibits"
+            name: "ctf"
+            widget: "list"
+            fields:
+              - {label: "Tên giải", name: "name", widget: "string"}
+              - {label: "Loại (Hình ảnh / PDF)", name: "type", widget: "string"}
+              - {label: "Đường dẫn File (Hoặc Tải ảnh lên)", name: "url", widget: "file"}
+              - {label: "Mô tả", name: "desc", widget: "string"}
+          - label: "Academic Exhibits"
+            name: "academic"
+            widget: "list"
+            fields:
+              - {label: "Tên chứng chỉ", name: "name", widget: "string"}
+              - {label: "Loại (Hình ảnh / PDF)", name: "type", widget: "string"}
+              - {label: "Đường dẫn File (Hoặc Tải ảnh lên)", name: "url", widget: "file"}
+              - {label: "Mô tả", name: "desc", widget: "string"}
