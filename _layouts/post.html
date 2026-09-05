@@ -20,51 +20,7 @@ layout: default
   <div class="post-content">
     <div class="wrap" id="markdown-container">
       {{ content }}
-      {% if page.github_md_url %}
-        <div id="github-content-loader" style="color: var(--trace); font-family: var(--font-mono); margin-top: 20px;">
-          Đang tải dữ liệu từ GitHub... <span style="display:inline-block; animation: spin 1s linear infinite;">↻</span>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
-            var mdUrl = "{{ page.github_md_url }}";
-            var basePath = mdUrl.substring(0, mdUrl.lastIndexOf('/') + 1);
-            
-            fetch(mdUrl)
-              .then(response => {
-                if (!response.ok) throw new Error("File not found or network error.");
-                return response.text();
-              })
-              .then(text => {
-                var renderer = new marked.Renderer();
-                // Fix relative image links
-                renderer.image = function(href, title, text) {
-                  if (href && !href.startsWith("http") && !href.startsWith("data:")) {
-                    href = basePath + href;
-                  }
-                  return `<img src="${href}" alt="${text}" title="${title || ''}" style="max-width:100%; border-radius:8px; margin: 10px 0;" />`;
-                };
-                
-                var html = marked.parse(text, { renderer: renderer });
-                document.getElementById('github-content-loader').style.display = 'none';
-                
-                var contentDiv = document.createElement('div');
-                contentDiv.innerHTML = html;
-                contentDiv.style.marginTop = "40px";
-                contentDiv.style.paddingTop = "20px";
-                contentDiv.style.borderTop = "1px dashed var(--ink-line)";
-                
-                document.getElementById('markdown-container').appendChild(contentDiv);
-              })
-              .catch(err => {
-                document.getElementById('github-content-loader').innerText = "Chưa có nội dung hoặc lỗi kết nối GitHub.";
-              });
-          });
-        </script>
-        <style>
-          @keyframes spin { 100% { transform: rotate(360deg); } }
-        </style>
-      {% endif %}
+
     </div>
   </div>
 
