@@ -450,6 +450,9 @@ section.block:last-of-type{ border-bottom: none; }
 .post-content img{
   margin: 20px 0;
   border: 1px solid var(--ink-line);
+  max-width: 100%;
+  height: auto !important;
+  object-fit: contain;
 }
 .post-content figcaption{
   font-family: var(--font-mono);
