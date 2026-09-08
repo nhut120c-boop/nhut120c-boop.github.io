@@ -45,7 +45,7 @@ a:hover{ text-decoration: underline; text-underline-offset: 3px; }
   outline-offset: 2px;
 }
 
-img{ max-width: 100%; border-radius: 6px; display:block; }
+img{ max-width: 100%; height: auto; border-radius: 6px; display:block; }
 
 .wrap{
   max-width: 880px;
