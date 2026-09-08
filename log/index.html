@@ -20,17 +20,17 @@ permalink: /log/
     <div class="log-list">
       {% for post in site.posts %}
         {% if post.tags contains "writeup" %}
-        <div class="log-row">
+        <div class="log-row" onclick="window.location='{{ post.url | relative_url }}'">
           <div class="date">{{ post.date | date: "%Y-%m-%d" }}</div>
           <div class="entry">
             <a href="{{ post.url | relative_url }}" class="title-link">{{ post.title }}</a>
             {% if post.repo_url %}
-              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" class="repo-link" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
+              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" class="repo-link" onclick="event.stopPropagation();" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
             {% endif %}
             {% if post.excerpt %}<div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
           </div>
           <div class="tags">
-            {% for t in post.tags %}<span class="pill">{{ t }}</span>{% endfor %}
+            {% for t in post.tags %}<span class="pill" onclick="event.stopPropagation();">{{ t }}</span>{% endfor %}
           </div>
         </div>
         {% endif %}
@@ -41,17 +41,17 @@ permalink: /log/
     <div class="log-list">
       {% for post in site.posts %}
         {% if post.tags contains "note" %}
-        <div class="log-row">
+        <div class="log-row" onclick="window.location='{{ post.url | relative_url }}'">
           <div class="date">{{ post.date | date: "%Y-%m-%d" }}</div>
           <div class="entry">
             <a href="{{ post.url | relative_url }}" class="title-link">{{ post.title }}</a>
             {% if post.repo_url %}
-              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" class="repo-link" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
+              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" class="repo-link" onclick="event.stopPropagation();" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
             {% endif %}
             {% if post.excerpt %}<div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
           </div>
           <div class="tags">
-            {% for t in post.tags %}<span class="pill">{{ t }}</span>{% endfor %}
+            {% for t in post.tags %}<span class="pill" onclick="event.stopPropagation();">{{ t }}</span>{% endfor %}
           </div>
         </div>
         {% endif %}
