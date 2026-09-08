@@ -26,6 +26,9 @@ permalink: /log/:year/:month/:day/:title/
 collections:
   exhibits:
     output: false
+  projects:
+    output: true
+    permalink: /project/:year/:month/:day/:title/
 
 defaults:
   - scope:
