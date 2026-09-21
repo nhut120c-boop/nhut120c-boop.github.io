@@ -45,6 +45,17 @@ ctf:
     meta: "Lĩnh vực: CTF"
     cer: "/cer/broncoctf.png"
 
+ai:
+  - title: "AI Riser Vietnam 2026"
+    stamp: "TOP 500"
+    date: "2026"
+    description: >
+      Dự án được chọn vào Top 500 dự án AI Riser Vietnam 2026 —
+      chương trình do Google tổ chức nhằm khuyến khích xây dựng
+      các sản phẩm AI thực tế. Nhận bộ quà tặng Silver Tier.
+    meta: "Lĩnh vực: AI · Tổ chức: Google"
+    cer: "/cer/ai-riser.pdf"
+
 academic:
   - title: "Professional Certification"
     stamp: "CERTIFIED"
