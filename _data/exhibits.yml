@@ -13,6 +13,14 @@ ctf:
       <br><strong>CTFTime:</strong> <a href="https://ctftime.org/team/435904" target="_blank">https://ctftime.org/team/435904</a>
     meta: "Vai trò: Team Lead · Repo: novactf-2026"
 
+  - title: "BCS CTF 2026"
+    stamp: "RANK #54"
+    date: "2026"
+    description: >
+      Certificate of Participation - BCS CTF 2026 do Bangladesh Computer Society tổ chức. Đạt thành tích Global Rank: #54 (team) và lọt Top 10 bảng thế giới trong cuộc thi an toàn thông tin 48 giờ.
+    meta: "Lĩnh vực: CTF"
+    cer: "/cer/bcs-ctf-2026.jpg"
+
   - title: "V1T CTF 2026"
     stamp: "CERTIFICATE"
     date: "2026"
