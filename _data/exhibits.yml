@@ -65,6 +65,14 @@ ai:
     cer: "/cer/ai-riser.pdf"
 
 academic:
+  - title: "Cisco Networking Academy — Networking Basics"
+    stamp: "VERIFIED"
+    date: "11/2026"
+    description: >
+      Chứng chỉ hoàn thành khóa học Networking Basics được cấp bởi Cisco Networking Academy. Khóa học bao gồm các kiến thức nền tảng về mạng máy tính, giao thức mạng (IPv4, IPv6, TCP/IP, Ethernet), kiến trúc mạng và cấu hình thiết bị mạng cơ bản.
+    meta: "Lĩnh vực: Networking · Tổ chức: Cisco Networking Academy"
+    cer: "/cer/NetworkingBasicsUpdate20261113-21-rbi0y3.pdf"
+
   - title: "Professional Certification"
     stamp: "CERTIFIED"
     date: "2026"
