@@ -7,16 +7,16 @@ permalink: /exhibits/
 <section class="hero" style="padding-bottom:30px;">
   <div class="wrap">
     <p class="eyebrow">Case File · Exhibits</p>
-    <h1 style="font-size:clamp(28px,5vw,42px);">Thành tích</h1>
+    <h1 style="font-size:clamp(28px,5vw,42px);">Achievements &amp; Honors</h1>
     <p class="tagline">
-      Nơi lưu lại các thành tích, giải thưởng và cột mốc trong quá trình học và thi đấu.
+      A record of achievements, awards, certifications, and milestones in competitions and academic pursuits.
     </p>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="block-head"><span class="idx">A</span><h2>Chứng nhận CTF & Giải đấu</h2></div>
+    <div class="block-head"><span class="idx">A</span><h2>CTF Competitions &amp; Tournaments</h2></div>
 
     {% for e in site.data.exhibits.ctf %}
     <div class="exhibit-featured">
@@ -36,7 +36,7 @@ permalink: /exhibits/
 
       <div class="meta">
         {{ e.date }}{% if e.meta %} · {{ e.meta }}{% endif %}
-        {% if e.cer %} · <a href="{{ e.cer | relative_url }}" target="_blank">📄 Xem toàn màn hình</a>{% endif %}
+        {% if e.cer %} · <a href="{{ e.cer | relative_url }}" target="_blank">📄 View Fullscreen</a>{% endif %}
       </div>
     </div>
     {% endfor %}
@@ -65,7 +65,7 @@ permalink: /exhibits/
 
       <div class="meta">
         {{ e.date }}{% if e.meta %} · {{ e.meta }}{% endif %}
-        {% if e.cer %} · <a href="{{ e.cer | relative_url }}" target="_blank">📄 Xem toàn màn hình</a>{% endif %}
+        {% if e.cer %} · <a href="{{ e.cer | relative_url }}" target="_blank">📄 View Fullscreen</a>{% endif %}
       </div>
     </div>
     {% endfor %}
@@ -74,7 +74,7 @@ permalink: /exhibits/
 
 <section class="block" style="padding-top:0;">
   <div class="wrap">
-    <div class="block-head"><span class="idx">C</span><h2>Chứng nhận Học thuật</h2></div>
+    <div class="block-head"><span class="idx">C</span><h2>Academic &amp; Professional Certifications</h2></div>
 
     {% for e in site.data.exhibits.academic %}
     <div class="exhibit-featured">
@@ -94,7 +94,7 @@ permalink: /exhibits/
 
       <div class="meta">
         {{ e.date }}{% if e.meta %} · {{ e.meta }}{% endif %}
-        {% if e.cer %} · <a href="{{ e.cer | relative_url }}" target="_blank">📄 Xem toàn màn hình</a>{% endif %}
+        {% if e.cer %} · <a href="{{ e.cer | relative_url }}" target="_blank">📄 View Fullscreen</a>{% endif %}
       </div>
     </div>
     {% endfor %}
@@ -103,7 +103,7 @@ permalink: /exhibits/
 
 <section class="block">
   <div class="wrap">
-    <div class="block-head"><span class="idx">D</span><h2>Đang chờ cập nhật</h2></div>
+    <div class="block-head"><span class="idx">D</span><h2>Pending &amp; Upcoming</h2></div>
     <div class="exhibit-grid">
       {% for p in site.data.exhibits.pending %}
       <div class="exhibit-pending">

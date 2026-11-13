@@ -1,22 +1,24 @@
-﻿# HƯỚNG DẪN THÊM CHỨNG CHỈ (CERTIFICATE) / THÀNH TÍCH MỚI
+﻿# GUIDE: ADDING A NEW CERTIFICATE / EXHIBIT
 
-Trang web của bạn đã được thiết kế hoàn toàn tự động! Để thêm 1 chứng chỉ mới vào trang Exhibits, bạn chỉ cần làm 2 bước cực kỳ đơn giản:
+Your website is designed to be fully automated! To add a new certificate or achievement to the Exhibits page, follow these 2 simple steps:
 
-### BƯỚC 1: Quăng file ảnh/pdf vào thư mục
-Copy file ảnh (hoặc pdf) của chứng chỉ mới và dán vào thư mục:
-ssets/images/ (hoặc bất kỳ thư mục nào bạn thích trên web).
-Ví dụ: ssets/images/chungchi_moi.png
+### STEP 1: Add your image/PDF file
+Copy your certificate image or PDF and place it into:
+`cer/` (or `assets/images/`).
+Example: `cer/new_certificate.pdf`
 
-### BƯỚC 2: Điền tên và phân loại vào file cấu hình
-Mở file _data/exhibits.yml bằng VS Code (hoặc Notepad).
-Ở đó đã chia sẵn 2 phần: ctf: và cademic:. Bạn chỉ cần copy dòng mẫu dưới đây và dán vào phần tương ứng.
+### STEP 2: Add entry to configuration
+Open `_data/exhibits.yml`.
+Entries are categorized under `ctf:`, `ai:`, and `academic:`. Paste a template snippet under the appropriate section:
 
-Ví dụ thêm 1 giải CTF mới, bạn dán vào dưới chữ ctf: như sau:
-`yaml
-  - name: "Tên giải CTF hoặc Chứng chỉ mới"
-    type: "Hình ảnh"
-    url: "/assets/images/chungchi_moi.png"
-    desc: "Đạt giải nhì hoặc giải ba gì đó..."
-`
+```yaml
+  - title: "Competition or Certificate Name"
+    stamp: "CERTIFICATE"
+    date: "2026"
+    description: >
+      Detailed description of the achievement or award...
+    meta: "Domain: CTF"
+    cer: "/cer/new_certificate.pdf"
+```
 
-Xong! Giờ chỉ cần git add ., git commit, git push là nó TỰ ĐỘNG hiện lên trên web cực kỳ đẹp mắt mà không cần code thêm 1 dòng HTML nào!
+Save the file, then run `git add .`, `git commit -m "feat: add certificate"`, and `git push origin main`. The certificate will automatically display on the website!

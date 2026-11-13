@@ -8,37 +8,37 @@ tags: [note, study]
 
 task 1 
 
-module này tiếp tục windows fundamentals 1
+This module continues windows fundamentals 1
 
-nội dung chính -> học thêm các công cụ có sẵn trong windows như: system configuration, uac settings, computer management, system information, resource monitor, command prompt, registry editor
+main content -> learn more tools available in windows such as: system configuration, uac settings, computer management, system information, resource monitor, command prompt, registry editor
 
-để làm lab -> bấm start machine
+To do lab -> press start machine
 
 task 2
 
-ở task này, em học về system configuration và advanced system settings
+In this task, you learn about system configuration and advanced system settings
 
-system configuration còn được gọi là msconfig
+system configuration is also known as msconfig
 
-msconfig là công cụ dùng để troubleshoot các lỗi liên quan đến quá trình khởi động windows
+msconfig is a tool used to troubleshoot errors related to the Windows startup process
 
-nói dễ hiểu hơn thì khi windows boot lỗi, service bị lỗi, hoặc nghi có thứ gì đó làm máy khởi động bất thường thì có thể dùng msconfig để kiểm tra
+To make it easier to understand, when Windows boots up, has a service error, or suspects that something is causing the computer to boot abnormally, you can use msconfig to check.
 
-cách mở msconfig
+how to open msconfig
 
 ```text
 win + r -> msconfig -> enter
 ```
 
-hoặc
+or
 
 ```text
 start menu -> search system configuration
 ```
 
-lưu ý là muốn mở msconfig thì cần quyền local administrator
+Note that if you want to open msconfig, you need local administrator rights
 
-trong msconfig có 5 tab chính
+In msconfig there are 5 main tabs
 
 ```text
 general
@@ -48,92 +48,92 @@ startup
 tools
 ```
 
-tab general dùng để chọn cách windows load khi khởi động
+The general tab is used to choose how windows loads at startup
 
-normal startup -> khởi động bình thường, load đầy đủ driver và service
+normal startup -> boot normally, fully load drivers and services
 
-diagnostic startup -> chỉ load driver và service cơ bản, dùng để kiểm tra lỗi
+diagnostic startup -> only loads basic drivers and services, used to check for errors
 
-selective startup -> cho phép chọn thành phần nào sẽ được load khi boot
+selective startup -> allows choosing which components will be loaded when booting
 
-tab boot dùng để chỉnh các tùy chọn khởi động của hệ điều hành
+The boot tab is used to adjust the operating system's boot options
 
-ví dụ có thể chỉnh safe boot, boot log hoặc timeout
+For example, you can adjust safe boot, boot log or timeout
 
-trong forensics, tab boot có thể giúp kiểm tra máy có bị chỉnh option khởi động bất thường không
+In forensics, the boot tab can help check if the machine has abnormal boot options
 
-tab services liệt kê các service có trên hệ thống
+The services tab lists the services available on the system
 
-service là dạng chương trình chạy nền trong windows
+Service is a type of program that runs in the background in Windows
 
-service có thể đang running hoặc stopped
+service may be running or stopped
 
-trong forensics, tab services rất quan trọng vì malware có thể tạo service để tự chạy lại sau khi restart máy
+In forensics, the services tab is very important because malware can create services to run again after restarting the computer
 
-nếu thấy service lạ, manufacturer lạ hoặc service nằm ở đường dẫn bất thường thì cần kiểm tra kỹ hơn
+If you see a strange service, a strange manufacturer, or a service located on an unusual path, you need to check more carefully
 
-tab startup dùng để xem các chương trình tự chạy khi user đăng nhập
+The startup tab is used to view programs that run automatically when the user logs in
 
-nhưng trong máy lab này là windows server nên tab startup thường không hiện giống windows 10 hoặc windows 11
+But this lab machine is a windows server so the startup tab usually doesn't appear like windows 10 or windows 11
 
-với windows server, để xem startup user-level thì dùng lệnh
+With windows server, to see the startup user-level, use the command
 
 ```text
 win + r -> shell:startup
 ```
 
-folder startup sẽ hiện các shortcut hoặc file được cấu hình chạy tự động khi user đăng nhập
+The startup folder will display shortcuts or files that are configured to run automatically when the user logs in
 
-trong forensics, startup folder cũng là nơi cần soi vì malware có thể đặt shortcut ở đây để tự chạy mỗi lần user login
+In forensics, the startup folder is also a place to look because malware can place shortcuts here to run automatically every time a user logs in
 
-tab tools chứa nhiều công cụ hệ thống có sẵn trong windows
+The tools tab contains many system tools available in windows
 
-mỗi tool sẽ có phần mô tả ngắn để biết công cụ đó dùng làm gì
+Each tool will have a short description to know what the tool is used for
 
-khi chọn một tool, phần selected command sẽ hiện lệnh dùng để mở tool đó
+When selecting a tool, the selected command section will display the command used to open that tool
 
-có thể bấm launch để chạy tool hoặc copy command đem chạy bằng run / cmd
+You can click launch to run the tool or copy the command to run with run / cmd
 
-advanced system settings là nơi chỉnh các thiết lập nâng cao của hệ thống
+advanced system settings is where to adjust advanced system settings
 
-cách mở
+how to open
 
 ```text
 start menu -> search view advanced system settings
 ```
 
-trong advanced system settings có các mục quan trọng như performance và startup and recovery
+In advanced system settings there are important items such as performance and startup and recovery
 
-performance dùng để chỉnh các thiết lập liên quan đến hiệu năng của windows
+performance is used to adjust settings related to windows performance
 
-trong performance có phần page file
+In performance there is a page file section
 
-page file là bộ nhớ ảo mà windows dùng thêm khi ram bị đầy
+page file is virtual memory that windows uses when RAM is full
 
-khi ram không đủ, windows có thể dùng một phần ổ đĩa làm virtual memory để tránh chương trình bị crash
+When RAM is not enough, Windows can use part of the drive as virtual memory to avoid program crashes
 
-page file có thể cho biết các thông tin như
+page file can indicate information such as
 
 ```text
-ổ đĩa chứa page file
+The drive contains the page file
 initial size
 maximum size
-windows có tự quản lý size không
+Does Windows manage the size itself?
 ```
 
-trong forensics, page file có thể hữu ích vì đôi khi nó còn chứa dấu vết dữ liệu từng nằm trong ram
+In forensics, the page file can be useful because it sometimes contains traces of data that was once in RAM
 
-ví dụ có thể còn sót chuỗi text, command, đường dẫn file, hoặc dữ liệu liên quan đến process từng chạy
+For example, there may be remaining text strings, commands, file paths, or data related to a process that was previously run
 
-startup and recovery dùng để chỉnh hành vi của windows khi hệ thống bị lỗi nặng
+startup and recovery are used to adjust windows behavior when the system has serious errors
 
-ví dụ khi máy bị blue screen of death
+For example, when the device has a blue screen of death
 
-windows có thể tạo crash dump để lưu lại thông tin tại thời điểm hệ thống bị crash
+Windows can create a crash dump to save information at the time the system crashed
 
-crash dump giúp admin hoặc analyst phân tích nguyên nhân lỗi
+Crash dump helps admins or analysts analyze the cause of errors
 
-các loại crash dump thường gặp gồm
+Common types of crash dumps include:
 
 ```text
 automatic memory dump
@@ -143,60 +143,60 @@ complete memory dump
 none
 ```
 
-trong forensics, crash dump có thể chứa thông tin về process, driver hoặc lỗi hệ thống tại thời điểm crash
+In forensics, crash dumps can contain information about processes, drivers or system errors at the time of the crash
 
-nếu máy bị malware làm crash hoặc driver độc hại gây lỗi thì crash dump có thể giúp tìm manh mối
+If your computer is crashed by malware or a malicious driver is causing errors, a crash dump can help find clues
 
-tóm tắt task 2
+summarize task 2
 
-msconfig -> dùng để troubleshoot lỗi startup
+msconfig -> used to troubleshoot startup errors
 
-general -> chọn kiểu windows khởi động
+general -> select boot windows type
 
-boot -> chỉnh tùy chọn boot
+boot -> adjust boot options
 
-services -> soi service chạy nền
+services -> soi service runs in the background
 
-startup -> soi app tự chạy khi login
+startup -> see app automatically run when logging in
 
-tools -> xem command mở các công cụ windows
+tools -> see command to open windows tools
 
-advanced system settings -> xem performance, page file và crash dump
+advanced system settings -> view performance, page file and crash dump
 
-trong forensics, task này giúp em kiểm tra service lạ, startup bất thường, bộ nhớ ảo và crash dump để tìm dấu hiệu hệ thống bị can thiệp
+In forensics, this task helps you check strange services, unusual startups, virtual memory and crash dumps to find signs of system interference.
 
-trả lời câu hỏi
+answer the question
 
 ```text
-câu hỏi 1
+question 1
 
 what is the name of the service that lists systems internals as the manufacturer?
 
-cách tìm
+how to find
 
-mở msconfig -> tab services -> tìm cột manufacturer có systems internals -> lấy tên service ở cột service
+Open msconfig -> services tab -> find the manufacturer column with systems internals -> get the service name in the service column
 ```
 
 <img width="1905" height="1023" alt="image" src="https://github.com/user-attachments/assets/f7b4badb-0f15-479b-bd42-d7fc4a223a35" />
 
-đáp án
+answer
 
 ```
 psshutdown
 ```
 
 ```text
-câu hỏi 2
+question 2
 
 whom is the windows license registered to?
 
-cách tìm
+how to find
 
-mở msconfig -> tab tools -> chọn about windows -> bấm launch -> xem dòng registered to
+Open msconfig -> tools tab -> select about windows -> click launch -> see the registered to line
 ```
 <img width="1894" height="1030" alt="image" src="https://github.com/user-attachments/assets/0ad0b364-795e-4cde-803c-9319667f566d" />
 
-đáp án
+answer
 
 ```
 windows user
@@ -204,35 +204,35 @@ windows user
 
 
 ```text
-câu hỏi 3
+question 3
 
 what is the command for windows troubleshooting?
 
-cách tìm
+how to find
 
-mở msconfig -> tab tools -> chọn windows troubleshooting -> nhìn phần selected command
+Open msconfig -> tools tab -> select windows troubleshooting -> look at selected command section
 
 ```
 <img width="1903" height="1028" alt="image" src="https://github.com/user-attachments/assets/0d97a21b-59fd-4e97-ae1a-a1b6a6815d41" />
 
-đáp án
+answer
 ```
 c:\windows\system32\control.exe /name microsoft.troubleshooting
 ```
 
 ```text
-câu hỏi 4
+question 4
 
 what command will open the control panel?
 
-cách tìm
+how to find
 
-mở msconfig -> tab tools -> chọn system properties -> nhìn phần selected command
+Open msconfig -> tools tab -> select system properties -> look at selected command section
 ```
 
 <img width="1910" height="1012" alt="image" src="https://github.com/user-attachments/assets/eb53da1f-5b9d-42f3-955c-ae82abbefb7e" />
 
-đáp án
+answer
 
 ```
 control.exe
@@ -240,97 +240,97 @@ control.exe
 
 task 3
 
-ở task này, em học về cách thay đổi uac settings trong windows
+In this task, you learn how to change uac settings in windows
 
-uac là user account control
+uac is user account control
 
-uac dùng để cảnh báo khi app hoặc user muốn thay đổi những thứ ở cấp hệ thống
+uac is used to warn when an app or user wants to change things at the system level
 
-ví dụ như cài phần mềm, sửa setting quan trọng, hoặc chạy chương trình cần quyền admin
+For example, installing software, editing important settings, or running programs that require admin rights
 
-nói dễ hiểu hơn
+speak more clearly
 
-uac giống như lớp hỏi lại của windows
+uac is like windows askback layer
 
-nó không cho app tự nhiên chạy quyền cao ngay lập tức
+it does not allow the app to naturally run with high permissions immediately
 
-nếu chương trình cần quyền admin -> windows sẽ hiện bảng xác nhận
+If the program needs admin rights -> windows will display a confirmation panel
 
-mục đích của uac là giảm rủi ro malware tự ý sửa hệ thống
+The purpose of uac is to reduce the risk of malware arbitrarily modifying the system
 
-trong task này, uac settings có thể mở thông qua system configuration -> tools
+In this task, uac settings can be opened via system configuration -> tools
 
-trong cửa sổ uac settings sẽ có một thanh trượt
+In the uac settings window there will be a slider
 
-thanh trượt này có 4 mức bảo mật
+This slider has 4 security levels
 
-mức 1
+level 1
 
 always notify
 
-đây là mức cao nhất
+This is the highest level
 
-windows sẽ báo mỗi khi app hoặc chính user muốn thay đổi hệ thống
+Windows will notify each time the app or the user wants to change the system
 
-màn hình sẽ bị làm tối lại bằng secure desktop
+The screen will be darkened using secure desktop
 
-mức này an toàn hơn nhưng có thể hơi phiền vì hỏi nhiều
+This level is safer but can be a bit annoying because it asks too many questions
 
-mức 2
+level 2
 
 notify for apps
 
-windows chỉ báo khi app cố thay đổi hệ thống
+Windows indicates when an app tries to make changes to the system
 
-nếu user tự đổi setting windows thì thường không báo
+If the user changes the windows settings themselves, there is usually no notification
 
-đây là mức mặc định của windows
+This is the windows default level
 
-mức này cân bằng giữa bảo mật và tiện dụng
+This level balances security and convenience
 
-mức 3
+level 3
 
 notify without dimming
 
-giống mức notify for apps
+Same as notify for apps level
 
-nhưng màn hình không bị làm tối
+but the screen is not dimmed
 
-mức này kém an toàn hơn một chút vì không dùng secure desktop
+This level is a bit less secure because it does not use a secure desktop
 
-mức 4
+level 4
 
 never notify
 
-windows sẽ không cảnh báo khi app hoặc user thay đổi hệ thống
+Windows will not warn when an app or user changes the system
 
-mức này không được khuyến nghị
+This level is not recommended
 
-vì nếu malware chạy được thì nó có thể dễ dàng thay đổi hệ thống hơn mà user không được cảnh báo
+because if the malware can run, it can more easily change the system without the user being warned
 
-trong forensics, uac settings cũng đáng chú ý
+In forensics, uac settings is also worth noting
 
-nếu thấy uac bị tắt hoặc đặt ở never notify -> có thể là dấu hiệu máy bị cấu hình yếu bảo mật hoặc đã bị malware chỉnh để dễ leo quyền / chạy lệnh nguy hiểm
+If you see that uac is turned off or set to never notify -> it may be a sign that the device has weak security configuration or has been modified by malware to easily gain permissions / run dangerous commands.
 
-vì vậy khi điều tra máy windows, em có thể kiểm tra uac để biết hệ thống có đang bật lớp cảnh báo quyền admin hay không
+So when investigating a Windows machine, you can check the uac to see if the system has the admin rights warning layer turned on or not.
 
-trả lời câu hỏi
+answer the question
 
 ```text
-câu hỏi
+question
 
 what is the command to open user account control settings?
 
-câu này hỏi file .exe dùng để mở cửa sổ user account control settings
+This question asks for the .exe file used to open the user account control settings window
 
-đề nói chỉ lấy tên file .exe, không lấy full path
+The title says to only get the .exe file name, not the full path
 
-vì vậy không cần ghi đường dẫn đầy đủ
+so there is no need to write the full path
 
 ```
 <img width="1919" height="977" alt="image" src="https://github.com/user-attachments/assets/07401c87-46d2-41cf-b67e-b83bcc7dc350" />
 
-đáp án
+answer
 
 ```
 UserAccountControlSettings.exe
@@ -338,16 +338,16 @@ UserAccountControlSettings.exe
 
 task 4
 
-ở task này, em học về computer management trên windows
+In this task, I learn about computer management on Windows
 
-computer management là công cụ gom nhiều tiện ích quản lý hệ thống vào một cửa sổ
+computer management is a tool that gathers many system management utilities into one window
 
 <img width="1050" height="964" alt="image" src="https://github.com/user-attachments/assets/2f684e64-34f1-4111-ab69-d2102caa4035" />
 
 
-thay vì mở từng tool riêng lẻ, em có thể dùng computer management để xem nhiều phần quan trọng như task scheduler, event viewer, shared folders, local users and groups, performance, device manager, disk management và services
+Instead of opening each individual tool, you can use computer management to view many important parts such as task scheduler, event viewer, shared folders, local users and groups, performance, device manager, disk management and services.
 
-computer management có 3 nhóm chính
+Computer management has 3 main groups
 
 ```text
 system tools
@@ -358,52 +358,52 @@ services and applications
 <img width="1246" height="900" alt="image" src="https://github.com/user-attachments/assets/8f97d978-55fa-4dd5-b3d2-b1378eec2ec5" />
 
 
-system tools là nhóm dùng để xem và quản lý các thành phần hệ thống
+system tools is a group used to view and manage system components
 
-trong system tools có task scheduler
+In system tools there is task scheduler
 
 <img width="1225" height="890" alt="image" src="https://github.com/user-attachments/assets/1b085e25-05b3-418a-ac9c-6991a1204149" />
 
 
-task scheduler dùng để tạo và quản lý các tác vụ tự động
+task scheduler is used to create and manage automated tasks
 
-một task có thể chạy chương trình, script hoặc command theo điều kiện nhất định
+A task can run a program, script or command under certain conditions
 
-ví dụ task có thể chạy khi user đăng nhập, khi máy khởi động, hoặc theo lịch cố định mỗi ngày
+For example, the task can run when the user logs in, when the computer boots, or on a fixed schedule every day
 
 trong forensics, task schedule qtrong
 
-vì malware có thể tạo scheduled task để tự chạy lại sau khi restart hoặc sau khi user login
+because malware can create scheduled tasks to rerun automatically after restart or after user login
 
-khi soi task scheduler, cần chú ý
+When looking at the task scheduler, you need to pay attention
 
 ```text
-tên task
-trạng thái task
+task name
+task status
 trigger
 last run time
 last run result
 actions
-command được chạy
+command is run
 ```
 
-trigger cho biết task chạy khi nào
+trigger indicates when the task runs
 
-actions cho biết task sẽ chạy chương trình hoặc command gì
+actions indicate what program or command the task will run
 
-nếu thấy action chạy powershell, cmd, file exe lạ hoặc script trong thư mục lạ thì cần điều tra kỹ hơn
+If you see an action running powershell, cmd, a strange exe file or a script in a strange folder, you need to investigate further
 
-trong ảnh lab, task scheduler library hiển thị các task có sẵn trên máy
+In the lab image, the task scheduler library displays the tasks available on the machine
 
-task npcapwatchdog được hỏi trong lab vì nó là scheduled task có cấu hình thời điểm chạy cụ thể
+The npcapwatchdog task is asked in the lab because it is a scheduled task with a specific runtime configuration
 
-muốn biết task chạy lúc nào thì phải xem cột triggers
+If you want to know when a task runs, you must look at the triggers column
 
-event viewer là công cụ dùng để xem log sự kiện trên windows
+Event viewer is a tool used to view event logs on Windows
 
-event log giống như dấu vết hoạt động của hệ thống
+Event log is like a trace of system activity
 
-nó ghi lại các sự kiện như lỗi chương trình, đăng nhập thành công, đăng nhập thất bại, service lỗi, driver lỗi hoặc hoạt động bảo mật
+It logs events such as program errors, successful logins, failed logins, service errors, driver errors or security activities.
 
 <img width="1233" height="888" alt="image" src="https://github.com/user-attachments/assets/62408580-eb31-4bff-a28a-3f726ff80908" />
 
@@ -411,7 +411,7 @@ nó ghi lại các sự kiện như lỗi chương trình, đăng nhập thành 
 <img width="742" height="304" alt="image" src="https://github.com/user-attachments/assets/ed0e18bc-5ed7-4c94-86fb-2cd220745044" />
 
 
-các loại event thường gặp gồm
+Common types of events include:
 
 ```text
 error
@@ -421,17 +421,17 @@ success audit
 failure audit
 ```
 
-error -> lỗi nghiêm trọng
+error -> fatal error
 
-warning -> cảnh báo, có thể chưa lỗi ngay nhưng có nguy cơ
+warning -> warning, may not be an immediate error but there is a risk
 
-information -> thông tin hoạt động bình thường
+information -> information works normally
 
-success audit -> hành động bảo mật thành công, ví dụ đăng nhập thành công
+success audit -> successful security action, for example successful login
 
-failure audit -> hành động bảo mật thất bại, ví dụ đăng nhập sai
+failure audit -> failed security action, for example incorrect login
 
-trong windows logs có các log phổ biến như
+In windows logs there are common logs such as
 
 ```text
 application
@@ -442,27 +442,27 @@ system
 <img width="737" height="439" alt="image" src="https://github.com/user-attachments/assets/0e3a8681-ab9d-4d21-8c94-337e0fad5439" />
 
 
-application -> log của ứng dụng
+application -> application log
 
-security -> log đăng nhập, audit, truy cập tài nguyên
+security -> login log, audit, resource access
 
-system -> log của thành phần hệ thống, driver, service
+system -> log of system components, drivers, services
 
-trong for, event viewer giúp dựng lại timeline và biết chuyện gì đã xảy ra trên máy
+In for, the event viewer helps reconstruct the timeline and know what happened on the machine
 
-ví dụ có thể soi đăng nhập bất thường, service bị lỗi, task được chạy, hoặc phần mềm nào gây lỗi
+For example, you can check for unusual logins, broken services, running tasks, or any software causing errors
 
-shared folders dùng để xem các thư mục đang được chia sẻ trên máy
+shared folders is used to view folders being shared on the computer
 
-trong shared folders có các mục như shares, sessions và open files
+In shared folders there are items such as shares, sessions and open files
 
-shares -> danh sách thư mục đang share
+shares -> list of shared folders
 
-sessions -> user nào đang kết nối tới share
+sessions -> which user is connecting to the share
 
-open files -> file nào đang được user khác mở qua share
+open files -> which files are being opened by other users through sharing
 
-trong windows có các share mặc định như
+In Windows there are default shares such as
 
 ```text
 admin$
@@ -472,23 +472,23 @@ ipc$
 
 shared folders
 
-`$` sau tên share -> hidden share
+`$` after the share name -> hidden share
 
-hidden share -> không hiện khi duyệt mạng thường, nhưng biết path + có quyền thì vẫn vào được
+hidden share -> does not appear when browsing the network normally, but knowing the path + having permissions can still access
 
 
 <img width="1234" height="878" alt="image" src="https://github.com/user-attachments/assets/6d2bad99-b6cf-41b0-8441-2e283b588d91" />
 
 
-trong for -> soi share lạ, share thư mục nhạy cảm 
+in for -> look for strange shares, share sensitive folders
 
 local users and groups
 
-quản lý user + group local
+Manage local users + groups
 
-giống `lusrmgr.msc`
+same as `lusrmgr.msc`
 
-trong for -> soi user lạ, user mới tạo, user bị add vào administrators
+in for -> look for strange users, newly created users, users added to administrators
 
 performance
 
@@ -496,108 +496,108 @@ performance
 <img width="1216" height="861" alt="image" src="https://github.com/user-attachments/assets/b0720020-aad0-4c1d-98a0-e3128cc41e1d" />
 
 
-có performance monitor, perfmon
+Has performance monitor, perfmon
 
 
 <img width="1226" height="875" alt="image" src="https://github.com/user-attachments/assets/b4203dc4-3562-4670-b1ec-ddc4fbbb1b5b" />
 
 
-xem cpu, ram, disk, network theo realtime hoặc log
+View cpu, ram, disk, network in realtime or log
 
-dùng khi máy chậm / nghi process ăn tài nguyên
+Used when the computer is slow / suspect the process is consuming resources
 
 device manager
 
 <img width="1245" height="911" alt="image" src="https://github.com/user-attachments/assets/95bba4c2-43f6-4f7e-a1eb-d05ca98ca3b8" />
 
 
-xem phần cứng + driver
+See hardware + drivers
 
-trong for -> soi driver lạ, thiết bị lạ, network adapter bất thường
+in for -> look for strange drivers, strange devices, unusual network adapters
 
 storage
 
-liên quan ổ đĩa
+Drive related
 
 disk management -> xem disk, partition, file system, drive letter
 
 <img width="1282" height="909" alt="image" src="https://github.com/user-attachments/assets/fdc86c5f-96b4-4a7a-bd0c-f246bc0d694c" />
 
 
-trong for -> soi partition lạ, ổ phụ, ổ  đĩa lạ
+in for -> look at strange partitions, secondary drives, strange drives
 
 services and applications
 
-chứa services + wmi control
+contains services + wmi control
 
-services -> xem service chạy nền
+services -> see services running in the background
 
 <img width="1229" height="880" alt="image" src="https://github.com/user-attachments/assets/ae0f05d1-1a68-464e-a085-07f7de6f906c" />
 
 
 ```text
-automatic -> tự chạy khi boot
-manual -> chỉ chạy khi được gọi
-disabled -> không cho chạy
+automatic -> runs automatically when booting
+manual -> runs only when called
+disabled -> not allowed to run
 ```
 
 <img width="1226" height="889" alt="image" src="https://github.com/user-attachments/assets/d33fa6ab-e87e-43d8-9167-7b2007ae65f4" />
 
 
-trong for , services là nơi rất cần soi
+In for , services is a very important place to look
 
-vì malware hay tạo service mới để persistence
+Because malware often creates new services for persistence
 
-nếu service có path lạ, tên lạ, chạy từ temp/appdata/downloads hoặc startup type là automatic thì cần kiểm tra kĩ
+If the service has a strange path, strange name, runs from temp/appdata/downloads or the startup type is automatic, you need to check carefully.
 
-wmi control dùng để cấu hình windows management instrumentation
+wmi control is used to configure windows management instrumentation
 
-wmi cho phép quản lý windows bằng script hoặc powershell, cả local và remote
+wmi allows managing windows using script or powershell, both locally and remotely
 
-trong forensics, wmi cũng đáng chú ý vì attacker có thể lợi dụng wmi để chạy lệnh hoặc tạo persistence
+In forensics, wmi is also noteworthy because attackers can take advantage of wmi to run commands or create persistence
 
 ```text
-câu hỏi 1
+question 1
 
 what is the command to open computer management
 
-câu này hỏi file .msc dùng để mở computer management
+This question asks for the .msc file used to open computer management
 ```
 
 <img width="873" height="257" alt="image" src="https://github.com/user-attachments/assets/b82259d4-426b-4837-a548-78144da05c26" />
 
 
-đáp án
+answer
 ```
 compmgmt.msc
 ```
 
 ```text
-câu hỏi 2
+question 2
 
 when is the npcapwatchdog scheduled task set to run at
 
-hỏi task npcapwatchdog được đặt chạy khi nào
+Ask when the npcapwatchdog task is set to run
 
-trong lab, npcapwatchdog có trigger là chạy lúc hệ thống khởi động
+In the lab, npcapwatchdog has a trigger that runs when the system boots
 
 ```
 
 <img width="1909" height="1018" alt="image" src="https://github.com/user-attachments/assets/3c03bf8e-abf2-4790-a56e-b9b5e196c856" />
 
-đáp án
+answer
 ```
 at system startup
 ```
 
 ```text
-câu hỏi 3
+question 3
 
 what is the name of the hidden folder that is shared
 
-câu này hỏi tên folder bị share dạng hidden
+This question asks for the name of the hidden shared folder
 
-muốn tìm thì vào computer management -> shared folders -> shares
+If you want to find it, go to computer management -> shared folders -> shares
 
 folder hidden share trong lab 
 
@@ -607,7 +607,7 @@ folder hidden share trong lab
 
 ```
 
-đáp án
+answer
 
 sh4r3dF0ld3r
 ```
@@ -616,15 +616,15 @@ task 5
 
 system information = `msinfo32`
 
-dùng để xem thông tin tổng quan của máy
+Used to view general information of the device
 
-cách mở
+how to open
 
 ```text
 win + r -> msinfo32
 ```
 
-hoặc
+or
 
 ```text
 msconfig -> tools -> system information
@@ -634,7 +634,7 @@ msconfig -> tools -> system information
 
 <img width="665" height="470" alt="image" src="https://github.com/user-attachments/assets/71cc01de-4ab0-4478-b2a5-97b3886ef384" />
 
-msinfo32 có 3 nhóm chính
+msinfo32 has 3 main groups
 
 ```text
 hardware resources
@@ -646,11 +646,11 @@ software environment
 
 system summary
 
-xem info tổng quan của máy
+See general information of the machine
 
 <img width="1783" height="919" alt="image" src="https://github.com/user-attachments/assets/282f595c-72cb-433a-9f52-1297ee630fc8" />
 
-ví dụ
+For example
 
 ```text
 os name
@@ -663,13 +663,13 @@ ram
 
 hardware resources
 
-xem tài nguyên phần cứng
+See hardware resources
 
 
 <img width="1765" height="895" alt="image" src="https://github.com/user-attachments/assets/c4795c90-f228-4166-949a-e72c569e48fc" />
 
 
-ví dụ
+For example
 
 ```text
 memory
@@ -678,17 +678,17 @@ dma
 i/o
 ```
 
-phần này hơi sâu, thường dùng khi troubleshoot phần cứng
+This part is a bit in-depth, often used when troubleshooting hardware
 
 components
 
-xem thiết bị / phần cứng trên máy
+view devices/hardware on the machine
 
 
 <img width="1785" height="913" alt="image" src="https://github.com/user-attachments/assets/80c3816e-d85a-4c56-924c-baa5a0370f8e" />
 
 
-ví dụ
+For example
 
 ```text
 display
@@ -700,16 +700,16 @@ usb
 problem devices
 ```
 
-forensics -> soi thiết bị lạ, card mạng lạ, driver lạ
+forensics -> scan for strange devices, strange network cards, strange drivers
 
 software environment
 
-xem môi trường phần mềm của windows
+see windows software environment
 
 <img width="1846" height="1013" alt="image" src="https://github.com/user-attachments/assets/339fa5d4-8ed7-4e95-bd64-c557417f842d" />
 
 
-ví dụ
+For example
 
 ```text
 system drivers
@@ -721,62 +721,62 @@ services
 startup programs
 ```
 
-forensics -> soi task, service, startup, module, biến môi trường bất thường
+forensics -> examine unusual tasks, services, startups, modules, environment variables
 
 
 
 ```text
-câu hỏi 1
+question 1
 
 what is the command to open system information?
 ```
 <img width="930" height="473" alt="image" src="https://github.com/user-attachments/assets/008bb339-c2ae-498b-8d48-7a8cfcb5c525" />
 
 ```
-đáp án
+answer
 
 msinfo32.exe
 ```
 ```
-câu hỏi 2
+question 2
 
 what is listed under system name?
 
-câu này hỏi tên máy đang hiển thị trong system information
+This question asks for the machine name being displayed in system information
 
-system name = hostname của máy windows
+system name = hostname of the windows machine
 
-vào `system summary`
+enter `system summary`
 
-tìm dòng `system name`
+find the line `system name`
 
 ```
 <img width="1895" height="956" alt="image" src="https://github.com/user-attachments/assets/18b2c65f-69c7-42da-9068-75d43b3176f5" />
 
 ```
-đáp án
+answer
 
 thm-winfun2
 ```
 ```
-câu hỏi 3
+question 3
 
 under environment variables, what is the value for comspec?
 
-câu này hỏi giá trị của biến môi trường comsspec
+This question asks for the value of the comsspec environment variable
 
-vào software environment
+go to the software environment
 
-chọn environment variables
+select environment variables
 
-tìm biến comspec
+find comspec variable
 ```
 
 <img width="1915" height="960" alt="image" src="https://github.com/user-attachments/assets/10fb2353-a844-41e1-a024-92fb72075322" />
 
 ```
 
-đáp án
+answer
 
 
 %SystemRoot%\system32\cmd.exe
@@ -786,9 +786,9 @@ task 6
 
 resource monitor = `resmon`
 
-dùng để xem tài nguyên hệ thống theo từng process
+Used to view system resources for each process
 
-xem được
+can see
 
 ```text
 cpu
@@ -797,13 +797,13 @@ disk
 network
 ```
 
-khác task manager ở chỗ resmon chi tiết hơn
+Different from task manager in that the response is more detailed
 
-nó cho biết process nào đang dùng cpu, ram, disk, network
+It shows which process is using cpu, ram, disk, network
 
 overview
 
-hiển thị tổng quan 4 phần chính
+Shows an overview of the 4 main sections
 
 ```text
 cpu
@@ -814,9 +814,9 @@ memory
 
 cpu
 
-xem process nào đang dùng cpu
+See which process is using the CPU
 
-có thể thấy
+can see
 
 ```text
 image
@@ -828,13 +828,13 @@ cpu
 average cpu
 ```
 
-forensics -> soi process lạ, process ăn cpu bất thường, process bị suspended
+forensics -> examines strange processes, processes eating CPU abnormally, processes are suspended
 
 memory
 
-xem ram đang được dùng thế nào
+See how RAM is being used
 
-có thể thấy
+can see
 
 ```text
 hard faults/sec
@@ -844,13 +844,13 @@ shareable
 private
 ```
 
-forensics -> soi process ăn ram bất thường hoặc process đáng nghi đang chạy nền
+forensics -> examine the process that is eating ram abnormally or that a suspicious process is running in the background
 
 disk
 
-xem process nào đang đọc/ghi file trên ổ đĩa
+See which process is reading/writing files on the drive
 
-có thể thấy
+can see
 
 ```text
 file path
@@ -860,15 +860,15 @@ total b/sec
 response time
 ```
 
-forensics -> rất hữu ích để biết process đang đụng tới file nào
+forensics -> very useful to know which files the process is touching
 
-ví dụ process lạ ghi vào log, temp, appdata hoặc system32 thì cần soi tiếp
+For example, if a strange process is recorded in log, temp, appdata or system32, you need to continue checking
 
 network
 
-xem process nào đang dùng mạng
+See which processes are using the network
 
-có thể thấy
+can see
 
 ```text
 send
@@ -880,43 +880,43 @@ remote port
 listening ports
 ```
 
-forensics -> soi kết nối lạ, ip lạ, port lạ, process đang nghe port
+forensics -> examine strange connection, strange ip, strange port, process listening to port
 
-resmon còn có thể lọc theo process
+resmon can also be filtered by process
 
-tick vào process -> các tab disk/network/memory sẽ lọc theo process đó
+tick on process -> disk/network/memory tabs will filter by that process
 
-dùng khi muốn điều tra riêng một process nghi ngờ
+Used when you want to specifically investigate a suspect process
 
-tóm tắt
+summary
 
-resmon -> xem chi tiết cpu, ram, disk, network theo process
+resmon -> see details of cpu, ram, disk, network by process
 
-cpu -> process dùng cpu
+cpu -> process uses cpu
 
-memory -> process dùng ram
+memory -> process uses ram
 
-disk -> process đọc/ghi file nào
+disk -> which file the process reads/writes
 
-network -> process kết nối tới đâu
+network -> where does the process connect to?
 
-forensics -> soi process lạ, file bị ghi bất thường, kết nối mạng lạ, port đang mở
+forensics -> strange process scanning, unusual recorded files, strange network connection, open port
 
-trả lời câu hỏi
+answer the question
 
 ```text
-câu hỏi
+question
 
 what is the command to open resource monitor?
 
-câu này hỏi file .exe dùng để mở resource monitor
+This question asks for the .exe file used to open the resource monitor
 
-resource monitor có tên lệnh là resmon
+resource monitor has a command name of resmon
 
 ```
 <img width="905" height="240" alt="image" src="https://github.com/user-attachments/assets/0d9f55cd-df43-4584-82a6-fdcc8b59a0ba" />
 
-đáp án
+answer
 ```
 resmon.exe
 ```
@@ -925,29 +925,29 @@ task 7
 
 command prompt = `cmd`
 
-cmd là nơi nhập lệnh để làm việc với windows
+cmd is where to enter commands to work with windows
 
-trước khi có giao diện gui, command line là cách chính để tương tác với hệ điều hành
+Before the gui interface, the command line was the primary way to interact with the operating system
 
-giờ windows chủ yếu dùng gui, nhưng cmd vẫn rất hữu ích để xem thông tin hệ thống và troubleshoot
+Nowadays windows mainly uses gui, but cmd is still very useful for viewing system information and troubleshooting
 
-cách mở cmd
+how to open cmd
 
 ```text
 win + r -> cmd
 ```
 
-hoặc
+or
 
 ```text
 start menu -> search command prompt
 ```
 
-một số lệnh cơ bản
+some basic commands
 
 `hostname`
 
-dùng để xem tên máy
+Used to view the machine name
 
 ```text
 hostname
@@ -963,37 +963,37 @@ hostname
 <img width="1163" height="565" alt="image" src="https://github.com/user-attachments/assets/c957e081-9d6b-4b79-8f38-d796e6e7b034" />
 
 
-dùng để xem user hiện tại đang đăng nhập
+Used to view the currently logged in user
 
 ```text
 whoami
 ```
 
-for-> biết lệnh đang chạy dưới quyền user nào
+for-> know which user the command is running under
 
 `ipconfig`
 
-dùng để xem cấu hình mạng của máy
+Used to view the device's network configuration
 
-xem được ip address, subnet mask, gateway, dns
+View ip address, subnet mask, gateway, dns
 
 ```text
 ipconfig
 ```
 
-muốn xem chi tiết hơn thì dùng
+If you want to see more details, use it
 
 ```text
 ipconfig /alld
 ```
 
-forensics -> soi ip, mac address, dns, dhcp, card mạng
+forensics -> scan ip, mac address, dns, dhcp, network card
 
 `/?`
 
-dùng để xem help của lệnh
+Used to view command help
 
-ví dụ muốn xem hướng dẫn của ipconfig
+For example, I want to see instructions for ipconfig
 
 ```text
 ipconfig /?
@@ -1001,7 +1001,7 @@ ipconfig /?
 
 `cls`
 
-dùng để xóa màn hình cmd
+Used to clear cmd screen
 
 ```text
 cls
@@ -1009,41 +1009,41 @@ cls
 
 `netstat`
 
-dùng để xem thống kê mạng và kết nối tcp/ip hiện tại
+Used to view network statistics and current TCP/IP connections
 
 ```text
 netstat
 ```
 
-có thể thêm tham số như `-a`, `-b`, `-e`
+can add parameters like `-a`, `-b`, `-e`
 
-forensics -> soi kết nối mạng lạ, port đang mở, process đang kết nối
+forensics -> scan for strange network connections, open ports, connecting processes
 
 `net`
 
-dùng để quản lý tài nguyên mạng, user, group, share, session
+Used to manage network resources, users, groups, shares, sessions
 
-nếu gõ `net` không thì nó hiện các sub-command có thể dùng
+If you type `net`, it will show sub-commands that can be used
 
 ```text
 net
 ```
 
-với lệnh `net`, muốn xem help thì không dùng `/?`
+With the command `net`, if you want to see help, do not use `/?`
 
-mà dùng
+but use
 
 ```text
 net help
 ```
 
-ví dụ xem help của net user
+For example, see net user's help
 
 ```text
 net help user
 ```
 
-một số sub-command hay gặp
+Some common sub-commands
 
 ```text
 net user
@@ -1053,36 +1053,36 @@ net session
 net use
 ```
 
-forensics -> soi user, group, share, session, kết nối mạng
+forensics -> examine users, groups, shares, sessions, network connections
 
-tóm tắt
+summary
 
-cmd -> nhập lệnh để lấy thông tin windows
+cmd -> enter command to get windows information
 
-hostname -> tên máy
+hostname -> hostname
 
-whoami -> user hiện tại
+whoami -> current user
 
-ipconfig -> thông tin mạng
+ipconfig -> network information
 
-ipconfig /all -> thông tin mạng chi tiết
+ipconfig /all -> detailed network information
 
-netstat -> kết nối mạng
+netstat -> network connection
 
-net -> quản lý user/group/share/session
+net -> manage user/group/share/session
 
-trả lời câu hỏi
+answer the question
 
 ```text
-câu hỏi 1
+question 1
 
 in system configuration, what is the full command for internet protocol configuration?
 
-câu này hỏi full command của tool internet protocol configuration trong system configuration
+This question asks for the full command of the internet protocol configuration tool in system configuration
 
-vì task đang nói các tool trong msconfig nên phải mở msconfig -> tools
+Because the task is talking about tools in msconfig, you have to open msconfig -> tools
 
-chọn internet protocol configuration
+Select internet protocol configuration
 
 
 ```
@@ -1090,27 +1090,27 @@ chọn internet protocol configuration
 <img width="938" height="750" alt="image" src="https://github.com/user-attachments/assets/5fa2ce0c-36a6-4a77-9b95-33cc5c779130" />
 
 
-đáp án
+answer
 
 ```
 c:\windows\system32\cmd.exe /k %windir%\system32\ipconfig.exe
 ```
 
 ```text
-câu hỏi 2
+question 2
 
 for the ipconfig command, how do you show detailed information?
 
-câu này hỏi dùng tham số nào để hiện thông tin chi tiết của ipconfig
+This question asks which parameters to use to display detailed information of ipconfig
 
-muốn xem đầy đủ thì dùng /all
+If you want to see the full version, use /all
 
 ```
 
 <img width="859" height="222" alt="image" src="https://github.com/user-attachments/assets/add17bdc-efd5-4c99-8f22-12b6d51d0f71" />
 
 
-đáp án
+answer
 
 ```
 ipconfig /all
@@ -1118,44 +1118,44 @@ ipconfig /all
 
 task 8
 
-registry editor là công cụ dùng để mở windows registry
+registry editor is a tool used to open windows registry
 
-windows registry là nơi lưu cấu hình của windows, user, app và phần cứng
+Windows registry is where the configuration of windows, users, apps and hardware is stored
 
-cách mở từ run
+how to open from run
 
 ```text
 win + r -> regedit.exe
 ```
 
-hoặc mở trong
+or open in
 
 ```text
 msconfig -> tools -> registry editor
 ```
 
-lưu ý
+note
 
-registry dành cho user nâng cao
+registry for advanced users
 
-chỉnh sai registry có thể làm windows hoặc app bị lỗi
+Incorrectly editing the registry can cause windows or apps to crash
 
-trong task này chỉ cần biết registry editor là tool để xem / chỉnh registry
+In this task, you only need to know that registry editor is a tool to view/edit the registry
 
-trả lời câu hỏi
+answer the question
 
 ```text
-câu hỏi
+question
 
 what is the command to open the registry editor?
 
-câu này hỏi tên file .exe dùng để mở registry editor
+This question asks for the name of the .exe file used to open the registry editor
 
-ban đầu em nghĩ là regedit.exe nhưng ko đủ
+At first I thought it was regedit.exe but it wasn't enough
 
-theo format ô đáp án có 8 ký tự trước .exe nên chọn regedt32.exe
+According to the answer box format, there are 8 characters before .exe, so choose regedt32.exe
 
-đáp án
+answer
 
 regedt32.exe
 ```

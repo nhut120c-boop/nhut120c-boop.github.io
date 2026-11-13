@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "Tên giải CTF: Tên bài"
+title: "CTF Name: Challenge Name"
 tags: [writeup, ctf]
 ---
 {% raw %}
-> Đừng xóa dòng raw ở trên và endraw ở cuối bài nhé! Nó giúp code và flag không bị lỗi web.
+> Keep raw/endraw tags around snippets containing double curly braces to prevent Jekyll build errors.
 
 ## 1. Challenge Description
-Viết mô tả hoặc đề bài ở đây...
+Write the challenge description or objective here...
 
 ## 2. Solution
-Phân tích và cách giải...
+Analysis and solution walkthrough...
 
 ## 3. Flag
-CTF{day_la_flag}
+`CTF{example_flag_here}`
 
 {% endraw %}

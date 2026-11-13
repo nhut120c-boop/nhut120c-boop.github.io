@@ -1,31 +1,30 @@
 ---
-title: "Chào mừng đến Case Log"
+title: "Welcome to Case Log"
 tags: [note, meta]
 category: meta
-excerpt: "Bài viết đầu tiên — hướng dẫn nhanh cách viết một entry mới trong Case Log, kèm ví dụ đầy đủ các định dạng Markdown hay dùng."
+excerpt: "Introductory entry — quick guide on how to write a new entry in Case Log, including examples of supported Markdown formats."
 ---
 
-Đây là bài viết mẫu để test các định dạng Markdown mà trang blog hỗ trợ —
-y hệt cách viết README trên GitHub.
+This is a sample post demonstrating the Markdown formatting options supported by this blog — identical to standard GitHub README formatting.
 
-## Heading cấp 2
+## Heading Level 2
 
-Đoạn văn thường. Có thể **in đậm**, *in nghiêng*, hoặc `inline code` ngay trong câu.
+Standard paragraph text. You can use **bold**, *italics*, or `inline code` within sentences.
 
-### Heading cấp 3
+### Heading Level 3
 
-- Gạch đầu dòng thứ nhất
-- Gạch đầu dòng thứ hai
-- Gạch đầu dòng thứ ba
+- First bullet item
+- Second bullet item
+- Third bullet item
 
-1. Danh sách có số
-2. Mục thứ hai
+1. Numbered list item
+2. Second numbered item
 
 ---
 
-Dòng gạch ngang `---` ở trên dùng để ngăn cách các phần trong bài.
+The horizontal rule `---` above is used to divide sections.
 
-## Code block
+## Code Block
 
 ```python
 def parse_evidence(path):
@@ -39,32 +38,27 @@ $ autopsy --case CASE-2026-01 --add-image ./disk.img
 [+] Image mounted, starting timeline analysis...
 ```
 
-## Ảnh
+## Images
 
-Chèn ảnh giống hệt README — thay link bên dưới bằng ảnh thật của bạn
-(upload vào `assets/images/` trong repo, hoặc dùng link ngoài).
+Insert images just like in a README — place your image in `assets/images/` or link to an external image URL:
 
-![Mô tả ảnh](https://placehold.co/800x360/141A26/EDE9DD?text=Screenshot)
+![Screenshot](https://placehold.co/800x360/141A26/EDE9DD?text=Screenshot)
 
-## Trích dẫn
+## Blockquotes
 
-> Ghi chú quan trọng hoặc trích một đoạn tham khảo có thể để trong blockquote như thế này.
+> Important notes or references can be highlighted inside a blockquote like this.
 
-## Bảng
+## Tables
 
-| Artifact        | Vị trí                          | Ghi chú                  |
-|------------------|----------------------------------|---------------------------|
-| Prefetch         | `C:\Windows\Prefetch`            | Lịch sử chạy chương trình |
-| Event Log        | `C:\Windows\System32\winevt`     | Log hệ thống / bảo mật    |
+| Artifact        | Location                         | Notes                    |
+|-----------------|----------------------------------|--------------------------|
+| Prefetch        | `C:\Windows\Prefetch`            | Execution history        |
+| Event Log       | `C:\Windows\System32\winevt`     | System & Security logs   |
 
-## Link
+## Links
 
-Tham khảo thêm tại [GitHub của mình](https://github.com/nhut120c-boop) hoặc
-[repo ctf-writeups](https://github.com/nhut120c-boop/ctf-writeups).
+Learn more on my [GitHub profile](https://github.com/nhut120c-boop) or the [ctf-writeups repository](https://github.com/nhut120c-boop/ctf-writeups).
 
 ---
 
-**Cách thêm bài mới:** tạo file `.md` mới trong thư mục `_posts/` với tên dạng
-`YYYY-MM-DD-tieu-de.md`, thêm phần front matter (`title`, `tags`, `excerpt`) ở đầu
-giống bài này, rồi viết nội dung bên dưới. Không cần sửa code, push lên GitHub
-là bài tự lên trang `/log/`.
+**How to add a new post:** create a new `.md` file inside `_posts/` with the naming format `YYYY-MM-DD-title.md`, include front matter (`title`, `tags`, `excerpt`) at the top, and write your content below. Push to GitHub and it will automatically appear on `/log/`.

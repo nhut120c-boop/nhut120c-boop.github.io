@@ -6,112 +6,112 @@ tags: [note, study]
 {% raw %}
 # Lab-Windows-Fundamentals-1
 
-ở phần này, em đọc nội dung lab thì thấy windows hiện tại có nhiều phiên bản khác nhau, trong đó bản phổ biến là home và pro
+In this section, I read the lab content and saw that Windows currently has many different versions, of which the popular versions are home and pro.
 
-câu hỏi lab hỏi là:
+The question the lab asks is:
 
 ```
 what encryption can you enable on pro that you can't enable in home?
 
 ```
 
-hiểu đơn giản là lab đang hỏi: tính năng mã hóa nào có thể bật trên bản pro, nhưng bản home thì không bật được đầy đủ
+Simply put, the lab is asking: what encryption features can be enabled on the pro version, but the home version cannot be fully enabled?
 
-sau khi xem sự khác nhau giữa windows home và windows pro, em thấy tính năng đó là:
+After looking at the differences between windows home and windows pro, I see that the features are:
 
 ```
 bitlocker
 ```
 
-ở task này, em học về windows desktop/gui, là giao diện hiện ra sau khi đăng nhập vào windows. trong bài có nhắc các thành phần chính như desktop, start menu, search box, task view, taskbar, toolbars và notification area 
+In this task, I learn about windows desktop/gui, which is the interface that appears after logging in to windows. In the article, the main components such as desktop, start menu, search box, task view, taskbar, toolbars and notification area are mentioned.
 
-với câu hỏi:
+with question:
 
 ```text
 which selection will hide/disable the search box?
 ```
 
-ban đầu em dựa vào phần taskbar settings và chọn đáp án:
+Initially, I relied on the taskbar settings and chose the answer:
 
 ```text
 hidden
 ```
 
-đáp án này đúng vì muốn ẩn ô search trên taskbar thì chọn **hidden**.
+This answer is correct because if you want to hide the search box on the taskbar, select **hidden**.
 
-tiếp theo, câu hỏi:
+Next, question:
 
 ```text
 which selection will hide/disable the task view button?
 ```
 
-lúc đầu em trả lời sai theo kiểu mô tả hành động là:
+At first I answered incorrectly by describing the action as:
 
 ```text
 hide task view button
 ```
 
-nhưng lab báo sai, vì nó cần đúng tên selection trong windows. sau đó em sửa lại thành:
+but the lab says it's wrong, because it needs the correct selection name in windows. Then I changed it to:
 
 ```text
 show task view button
 ```
 
-lý do là mục show task view button dùng để bật/tắt nút task view. muốn ẩn nó thì bỏ tick ở mục này.
+The reason is that the show task view button section is used to turn on/off the task view button. If you want to hide it, uncheck this section.
 
-cuối cùng, câu hỏi:
+Finally, the question:
 
 ```text
 besides clock and network, what other icon is visible in the notification area?
 ```
 
-ban đầu em nghĩ đáp án là:
+At first I thought the answer was:
 
 ```text
 volume
 ```
 
-vì trong bài có nhắc notification area có thể hiện volume icon và network/wireless icon. nhưng đáp án này không khớp format vì chỉ có 6 chữ. 
-sau đó em kiểm tra lại giao diện notification area trên windows và nhận ra ngoài clock, network thì còn có action center. đây là khu vực dùng để hiển thị thông báo hệ thống và truy cập nhanh một số thiết lập của windows
+Because in the article it is mentioned that the notification area can display the volume icon and network/wireless icon. But this answer doesn't match the format because it only has 6 words.
+Then I checked the notification area interface on windows and realized that in addition to clock and network, there was also an action center. This is the area used to display system notifications and quickly access some Windows settings
 
-vì vậy em sửa đáp án thành:
+So I changed the answer to:
 ```
 action center
 ```
 task 3
 
-task này em chỉ đọc hướng dẫn và khởi động máy ảo windows được lab cấp
+For this task, I just read the instructions and started the Windows virtual machine provided by the lab
 
 task 4
-ở task này, em học về các hệ thống tập tin (file system) trên windows.
+In this task, you learn about file systems on Windows.
 
 <img width="553" height="676" alt="image" src="https://github.com/user-attachments/assets/1f523e4f-b98a-455d-adeb-bef193712835" />
 
 
-trong bài có nhắc đến ntfs là hệ thống tập tin mặc định của các bản windows hiện đại
+In the article, it is mentioned that ntfs is the default file system of modern Windows versions
 
 
-chuẩn mới này được dùng để thay thế cho các chuẩn cũ như fat16, fat32 hay hpfs
+This new standard is used to replace old standards such as fat16, fat32 or hpfs
 
-ntfs mang lại nhiều ưu điểm vượt trội, điển hình nhất là hỗ trợ các file có dung lượng lớn hơn 4gb
+ntfs brings many outstanding advantages, most typically supporting files larger than 4GB.
 
-ngoài ra, nó có tính năng tự ghi chú (journaling) để tự động phục hồi lỗi
+Additionally, it has a journaling feature for automatic error recovery
 
-ntfs cũng cho phép bảo mật tốt hơn thông qua việc thiết lập phân quyền (permissions) cho từng thư mục và tệp tin.
+ntfs also allows for better security through setting permissions for each folder and file.
 
-chuẩn này còn có một tính năng gọi là alternate data streams (ads). đây là nơi mà các phần mềm độc hại (malware) thường lợi dụng để ẩn giấu dữ liệu.
+This standard also includes a feature called alternate data streams (ads). This is where malicious software (malware) often takes advantage to hide data.
 
-câu hỏi 
+question
 ```
 what is the meaning of ntfs?
 ```
-hiểu đơn giản là lab đang hỏi: ntfs là viết tắt của cụm từ gì.
+Simply put, the lab is asking: What does ntfs stand for?
 
-sau khi đọc ngay dòng đầu tiên của tài liệu trong task, bài đã giải thích rất rõ
+After reading the first line of the document in the task, the lesson explained it very clearly
 
-nguyên văn là: "The file system used in modern versions of Windows is the New Technology File System or simply NTFS"
+The original text is: "The file system used in modern versions of Windows is the New Technology File System or simply NTFS"
 
-đáp án
+answer
 ```
 new technology file system
 ```
@@ -119,63 +119,63 @@ task 5:
 
 task 5
 
-ở task này, em học về thư mục windows.
+In this task, I learn about windows folders.
 
-thư mục windows thường nằm ở:
+windows folder is usually located in:
 
 ```text
 C:\Windows
 ```
 
-thư mục này dùng để chứa các file của hệ điều hành windows.
+This folder is used to store files of the Windows operating system.
 
-nhưng nó không bắt buộc phải luôn nằm ở ổ C.
+but it is not required to always be located in drive C.
 
-=> vì vậy windows dùng biến môi trường để trỏ tới đúng vị trí thư mục windows.
+=> so windows uses environment variables to point to the correct windows directory location.
 
-biến môi trường là nơi lưu các thông tin của hệ thống, ví dụ:
+Environment variables are where system information is stored, for example:
 
 ```text
-đường dẫn hệ điều hành
-số lượng CPU
-vị trí thư mục tạm
+operating system path
+number of CPUs
+temporary folder location
 ```
 
-trong task còn nhắc tới thư mục:
+The task also mentions the folder:
 
 ```text
 System32
 ```
 
-System32 nằm bên trong thư mục Windows.
+System32 is located inside the Windows folder.
 
-đây là thư mục rất quan trọng vì chứa nhiều file core của hệ điều hành.
+This is a very important folder because it contains many core files of the operating system.
 
-lưu ý:
+note:
 
 ```text
-xóa nhầm file trong System32 -> windows có thể lỗi / không chạy được
+Wrongly delete files in System32 -> Windows may fail/not run
 ```
 
-câu hỏi lab hỏi là:
+The question the lab asks is:
 
 ```text
 what is the system variable for the windows folder?
 ```
 
-hiểu đơn giản là:
+Simply put:
 
 ```text
-biến hệ thống đại diện cho thư mục windows là gì?
+What is the system variable that represents the windows folder?
 ```
 
-trong bài có ghi rõ:
+The article clearly states:
 
 ```text
 the system environment variable for the Windows directory is %windir%
 ```
 
-=> đáp án là:
+=> the answer is:
 
 ```text
 %windir%
@@ -184,81 +184,81 @@ the system environment variable for the Windows directory is %windir%
 
 task 6
 
-ở task này, em học về user accounts trên windows.
+In this task, I learn about user accounts on Windows.
 
-trên windows local thường có 2 loại tài khoản:
+On Windows local there are usually 2 types of accounts:
 
 ```text
 Administrator
 Standard User
 ```
 
-Administrator -> có quyền cao, có thể thêm user, xóa user, sửa group, đổi setting hệ thống
+Administrator -> has high rights, can add users, delete users, edit groups, change system settings
 
-Standard User -> quyền thấp hơn, chỉ sửa được file/folder của chính user đó, không đổi được các thiết lập cấp hệ thống
+Standard User -> lower rights, can only edit files/folders of that user, cannot change system level settings
 
-khi tạo user mới, windows sẽ tạo profile riêng cho user
+When creating a new user, Windows will create a separate profile for the user
 
-profile của user thường nằm trong:
+The user's profile is usually located in:
 
 ```text
 C:\Users
 ```
 
-ví dụ user tên Max thì profile sẽ là:
+For example, if the user is named Max, the profile will be:
 
 ```text
 C:\Users\Max
 ```
 
-ngoài phần Settings, em có thể xem user bằng Local Users and Groups
+In addition to Settings, you can view users using Local Users and Groups
 
-cách mở:
+opening way:
 
 ```text
 Win + R
 ```
 
-sau đó nhập:
+then enter:
 
 ```text
 lusrmgr.msc
 ```
 
-rồi Enter.
+then Enter.
 
-sau khi mở `lusrmgr.msc`, em thấy có 2 mục chính:
+After opening `lusrmgr.msc`, I see 2 main items:
 
 ```text
 Users
 Groups
 ```
 
-Users -> dùng để xem danh sách tài khoản local.
+Users -> used to view the list of local accounts.
 
-Groups -> dùng để xem các nhóm quyền trên máy.
+Groups -> used to view permission groups on the device.
 
-user thuộc group nào -> sẽ kế thừa quyền của group đó.
+Which group the user belongs to -> will inherit the rights of that group.
 
-một user có thể nằm trong nhiều group cùng lúc.
+A user can be in many groups at the same time.
 
-câu hỏi 1:
+Question 1:
 
 ```text
 What is the name of the other user account?
 ```
 
-hiểu đơn giản là hỏi: tên user khác trên máy là gì?
+Simply put, ask: what is the name of another user on the machine?
 
-cách tìm:
+How to find:
 
 ```text
-mở lusrmgr.msc -> chọn Users -> xem danh sách user
+Open lusrmgr.msc -> select Users -> see list of users
 ```
 
 <img width="1919" height="1014" alt="image" src="https://github.com/user-attachments/assets/5c117773-2e01-4f55-b380-1e1b6826d167" />
 
-trong danh sách Users, em thấy ngoài các tài khoản mặc định còn có user:
+In the Users list, I see that in addition to the default accounts, there are also users:
 
 <img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/3997e7a9-4a34-4fc5-afdd-514fed13d612" />
 
@@ -266,64 +266,64 @@ trong danh sách Users, em thấy ngoài các tài khoản mặc định còn c�
 tryhackmebilly
 ```
 
-=> đáp án:
+=> answer:
 
 ```text
 tryhackmebilly
 ```
 
-câu hỏi 2:
+Question 2:
 
 ```text
 What groups is this user a member of?
 ```
 
-hiểu đơn giản là hỏi: user này thuộc những group nào
+Simply put, it means asking: which groups does this user belong to?
 
-cách tìm:
+How to find:
 
 ```text
-mở lusrmgr.msc -> Users -> double click tryhackmebilly -> tab Member Of
+Open lusrmgr.msc -> Users -> double click tryhackmebilly -> Member Of tab
 ```
 
 <img width="1900" height="1011" alt="image" src="https://github.com/user-attachments/assets/fc791aad-7aa8-4baa-be0b-bdc667c7954d" />
 
 
-trong tab Member Of sẽ hiện các group mà user này thuộc về.
+In the Member Of tab, groups that this user belongs to will be displayed.
 
-=> đáp án:
+=> answer:
 
 ```text
 Remote Desktop Users,Users
 ```
 
-câu hỏi 3:
+Question 3:
 
 ```text
 What built-in account is for guest access to the computer?
 ```
 
-hiểu đơn giản là hỏi: tài khoản built-in nào dùng cho khách truy cập máy?
+Simply put, ask: which built-in account is used for visitors to access the device?
 
-cách tìm:
+How to find:
 
 ```text
-mở lusrmgr.msc -> Users -> nhìn cột Name
+Open lusrmgr.msc -> Users -> look at the Name column
 ```
 
 <img width="1893" height="1019" alt="image" src="https://github.com/user-attachments/assets/f5770944-fa40-4d01-909d-fdd48cc8fa4b" />
 
 
-trong danh sách có tài khoản:
+In the list there are accounts:
 
 ```text
 Guest
 ```
 
-đây là tài khoản mặc định dùng cho guest access.
+This is the default account used for guest access.
 
 
-=> đáp án:
+=> answer:
 
 
 ```text
@@ -331,7 +331,7 @@ Guest
 ```
 
 
-câu hỏi 4:
+Question 4:
 
 
 ```text
@@ -339,18 +339,18 @@ What is the account description?
 ```
 
 
-hiểu đơn giản là hỏi: mô tả của tài khoản Guest là gì?
+Simply put, ask: what is the description of the Guest account?
 
 
-cách tìm:
+How to find:
 
 
 ```text
-mở lusrmgr.msc -> Users -> nhìn dòng Users -> cột Description
+Open lusrmgr.msc -> Users -> look at the Users line -> Description column
 ```
 
 
-ở dòng Guest, phần Description ghi là:
+In the Guest line, the Description section reads:
 
  
 ```text
@@ -362,91 +362,91 @@ window$Fun1!
 
 
 
-=> đáp án:
+=> answer:
 
 ```text
 window$Fun1!
 ```
 task 7
 
-ở task này, em học về User Account Control (UAC).
+In this task, you learn about User Account Control (UAC).
 
-trên windows, nhiều user cá nhân thường đăng nhập bằng tài khoản local administrator.
+On Windows, many individual users often log in with a local administrator account.
 
-administrator -> có quyền thay đổi hệ thống.
+administrator -> has rights to change the system.
 
-nhưng không phải lúc nào user cũng cần chạy với quyền cao.
+But users don't always need to run with high rights.
 
-ví dụ:
+For example:
 
 ```text
-lướt web
-mở word
+surf the web
+open word
 xem file
-làm việc bình thường
+work normally
 ```
 
-=> mấy việc này không cần quyền administrator cao.
+=> These tasks do not require high administrator rights.
 
-nếu lúc nào cũng chạy quyền cao -> nguy hiểm hơn.
+If you always run high power -> more dangerous.
 
-lý do:
+reason:
 
 ```text
-malware chạy theo quyền của user
-user có quyền admin -> malware cũng dễ tác động hệ thống hơn
+Malware runs under user permissions
+The user has admin rights -> malware can also easily affect the system
 ```
 
-để giảm rủi ro này, microsoft tạo ra UAC.
+To reduce this risk, Microsoft created UAC.
 
-UAC xuất hiện từ Windows Vista và tiếp tục có trong các bản Windows sau đó.
+UAC appeared in Windows Vista and continues to be present in later versions of Windows.
 
-lưu ý:
+note:
 
 ```text
-UAC mặc định không áp dụng cho built-in local administrator account
+Default UAC does not apply to built-in local administrator accounts
 ```
 
-cách UAC hoạt động:
+How UAC works:
 
-khi user thuộc nhóm administrator đăng nhập vào windows, phiên làm việc ban đầu không chạy full quyền cao.
+When a user belonging to the administrator group logs in to Windows, the initial session does not run with full privileges.
 
-khi chương trình cần quyền cao hơn -> windows hiện hộp thoại UAC để hỏi xác nhận.
+When the program needs higher permissions -> windows displays a UAC dialog box to ask for confirmation.
 
-ví dụ khi cài chương trình:
+For example, when installing the program:
 
 ```text
-double click file cài đặt
--> hiện biểu tượng cái khiên
--> UAC prompt xuất hiện
--> yêu cầu xác nhận / nhập password admin
+double click the installation file
+-> shows shield icon
+-> UAC prompt appears
+-> ask for confirmation/enter admin password
 ```
 
-biểu tượng cái khiên trên icon chương trình nghĩa là:
+The shield icon on the program icon means:
 
 ```text
-chương trình cần quyền cao để chạy
+The program needs high permissions to run
 ```
 
-nếu không nhập password hoặc không cho phép -> chương trình không được cài.
+If you do not enter a password or do not allow it -> the program will not be installed.
 
-=> UAC giúp giảm khả năng malware tự ý thay đổi hệ thống.
+=> UAC helps reduce the possibility of malware arbitrarily changing the system.
 
-câu hỏi lab hỏi là:
+The question the lab asks is:
 
 ```text
 What does UAC mean?
 ```
 
-hiểu đơn giản là:
+Simply put:
 
 ```text
-UAC là viết tắt của cụm từ gì?
+What does UAC stand for?
 ```
 
-trong bài có ghi rõ tên đầy đủ là User Account Control.
+The article clearly states the full name is User Account Control.
 
-=> đáp án:
+=> answer:
 
 ```text
 User Account Control
@@ -455,92 +455,92 @@ User Account Control
 
 task 8
 
-ở task này, em học về Settings và Control Panel trên Windows.
+In this task, I learn about Settings and Control Panel on Windows.
 
-đây là 2 nơi chính dùng để thay đổi cấu hình hệ thống.
+These are the two main places used to change system configuration.
 
-Settings -> giao diện mới hơn, xuất hiện từ Windows 8.
+Settings -> newer interface, appearing since Windows 8.
 
-Control Panel -> giao diện cũ hơn, dùng để chỉnh nhiều thiết lập nâng cao.
+Control Panel -> older interface, used to adjust many advanced settings.
 
-ví dụ:
+For example:
 
 ```text
-thêm máy in
-gỡ chương trình
-xem phần mềm đã cài
-đổi network adapter
-chỉnh firewall
+add printer
+uninstall the program
+View installed software
+change network adapter
+Adjust firewall
 ```
 
-Settings hiện nay là nơi user thường mở trước khi muốn đổi setting.
+Settings is currently where users often open before wanting to change settings.
 
-nhưng một số mục nâng cao vẫn sẽ chuyển qua Control Panel.
+but some advanced items will still move to Control Panel.
 
-ví dụ:
+For example:
 
 ```text
 Settings
 -> Network & Internet
 -> Change adapter options
--> mở cửa sổ thuộc Control Panel
+-> open the Control Panel window
 ```
 
-nếu không biết mục cần chỉnh nằm ở đâu -> dùng Start Menu để search.
+If you don't know where the item you need to edit is -> use Start Menu to search.
 
-ví dụ search:
+search example:
 
 ```text
 wallpaper
 ```
 
-=> Windows sẽ đưa tới đúng mục đổi hình nền trong Settings.
+=> Windows will take you to the correct wallpaper change section in Settings.
 
-Control Panel còn có mục Programs and Features.
+Control Panel also has a Programs and Features section.
 
-mục này dùng để xem phần mềm đã cài trên máy.
+This section is used to view the software installed on the device.
 
-có thể thấy:
+can see:
 
 ```text
-tên phần mềm
+software name
 publisher
 version
 ```
 
-trong forensics, mục này giúp kiểm tra máy có phần mềm lạ nào được cài thêm không.
+In forensics, this section helps check if the computer has any strange software installed.
 
-câu hỏi lab hỏi là:
+The question the lab asks is:
 
 ```text
 In the Control Panel, change the view to Small icons. What is the last setting in the Control Panel view?
 ```
 
-hiểu đơn giản là:
+Simply put:
 
 ```text
-vào Control Panel -> đổi View by thành Small icons -> xem mục cuối cùng là gì?
+Go to Control Panel -> change View by to Small icons -> see what the last item is?
 ```
 
-cách làm:
+making:
 
 ```text
-mở Start Menu
+Open Start Menu
 -> search Control Panel
--> mở Control Panel
--> góc phải chọn View by: Small icons
--> kéo xuống / nhìn mục cuối cùng
+-> open Control Panel
+-> right corner select View by: Small icons
+-> scroll down / look at the last item
 ```
 
 <img width="1889" height="954" alt="image" src="https://github.com/user-attachments/assets/7b345faf-af93-4d9c-a347-4ee237ae03b1" />
 
-mục cuối cùng trong lab là:
+The last item in the lab is:
 
 ```text
 Windows Defender Firewall
 ```
 
-=> đáp án:
+=> answer:
 
 ```text
 Windows Defender Firewall
@@ -548,68 +548,68 @@ Windows Defender Firewall
 
 task 9
 
-ở task này, em học về task manager trên windows.
+In this task, I learn about task manager on windows.
 
-task manager dùng để xem các chương trình và tiến trình đang chạy trên hệ thống.
+Task manager is used to view programs and processes running on the system.
 
-trong task manager có thể xem:
+In task manager you can see:
 
 ```text
-ứng dụng đang mở
-process đang chạy
-cpu đang dùng bao nhiêu
-ram đang dùng bao nhiêu
-hiệu năng hệ thống
+open application
+process is running
+How much CPU is being used?
+How much RAM are you using?
+system performance
 ```
 
-cách mở task manager:
+How to open task manager:
 
 ```text
 right-click taskbar -> task manager
 ```
 
-hoặc dùng phím tắt:
+or use keyboard shortcuts:
 
 ```text
 ctrl + shift + esc
 ```
 
-khi mới mở, task manager có thể hiện ở simple view.
+When first opened, the task manager is displayed in simple view.
 
-simple view -> chỉ hiện ít thông tin.
+simple view -> only shows a little information.
 
-muốn xem chi tiết hơn thì bấm:
+If you want to see more details, click:
 
 ```text
 more details
 ```
 
-sau đó task manager sẽ hiện nhiều tab và nhiều thông tin hơn.
+Then task manager will display more tabs and more information.
 
-trong forensics, task manager giúp em kiểm tra nhanh process lạ đang chạy trên máy.
+In forensics, task manager helps you quickly check strange processes running on the computer.
 
-ví dụ có thể soi:
+Examples can be seen:
 
 ```text
-process lạ
-app đang chạy nền
-mức cpu/ram bất thường
-chương trình nghi malware
+strange process
+app is running in the background
+Abnormal cpu/ram levels
+program suspected of malware
 ```
 
-câu hỏi lab hỏi là:
+The question the lab asks is:
 
 ```text
 what is the keyboard shortcut to open task manager?
 ```
 
-hiểu đơn giản là:
+Simply put:
 
 ```text
-phím tắt để mở task manager là gì?
+What is the shortcut to open task manager?
 ```
 
-đáp án:
+answer:
 
 ```text
 ctrl + shift + esc

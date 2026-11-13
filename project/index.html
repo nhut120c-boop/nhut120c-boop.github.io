@@ -9,7 +9,7 @@ permalink: /project/
     <p class="eyebrow">Portfolio · Project</p>
     <h1 style="font-size:clamp(28px,5vw,42px);">Project</h1>
     <p class="tagline">
-      Tổng hợp các dự án cá nhân và sản phẩm đã thực hiện.
+      A collection of personal projects, practical labs, and security tools.
     </p>
   </div>
 </section>
@@ -24,7 +24,7 @@ permalink: /project/
           <div class="entry">
             <a href="{{ project.url | relative_url }}" class="title-link">{{ project.title }}</a>
             {% if project.repo_url %}
-              <a href="{{ project.repo_url }}" target="_blank" rel="noopener" class="repo-link" onclick="event.stopPropagation();" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
+              <a href="{{ project.repo_url }}" target="_blank" rel="noopener" class="repo-link" onclick="event.stopPropagation();" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Open GitHub Repo ↗]</a>
             {% endif %}
             {% if project.excerpt %}<div class="excerpt">{{ project.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
           </div>
@@ -36,7 +36,7 @@ permalink: /project/
     </div>
 
     {% if site.projects.size == 0 %}
-    <p style="color:var(--paper-dim);">Chưa có dự án nào. Thêm file mới trong mục Projects trên Admin.</p>
+    <p style="color:var(--paper-dim);">No projects found yet. Add new files via Projects in Admin or _projects/.</p>
     {% endif %}
   </div>
 </section>

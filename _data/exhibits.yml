@@ -1,24 +1,24 @@
 # ============================================================
-# EXHIBITS — dữ liệu trang "Thành tích".
+# EXHIBITS — Data for Achievements & Honors
 # ============================================================
 
 ctf:
   - title: "NovaRun — CTF Team"
     stamp: "TEAM LEAD"
-    date: "2025 — hiện tại"
+    date: "2025 — Present"
     description: >
-      Sáng lập và dẫn dắt NovaRun, đội CTF tập trung học qua thi đấu ở các
-      giải khu vực và quốc tế. Tổ chức việc luyện tập, phân công hạng mục
-      (forensics / web / reverse...), và viết lại writeup sau mỗi giải.
+      Founder and Team Lead of NovaRun, a CTF team competing in regional
+      and international competitions. Organize team training sessions, assign roles
+      (forensics / web / reverse engineering...), and author post-competition writeups.
       <br><strong>CTFTime:</strong> <a href="https://ctftime.org/team/435904" target="_blank">https://ctftime.org/team/435904</a>
-    meta: "Vai trò: Team Lead · Repo: novactf-2026"
+    meta: "Role: Team Lead · Repo: novactf-2026"
 
   - title: "BCS CTF 2026"
     stamp: "RANK #54"
     date: "2026"
     description: >
-      Certificate of Participation - BCS CTF 2026 do Bangladesh Computer Society tổ chức. Đạt thành tích Global Rank: #54 (team) và lọt Top 10 bảng thế giới trong cuộc thi an toàn thông tin 48 giờ.
-    meta: "Lĩnh vực: CTF"
+      Certificate of Participation - BCS CTF 2026 organized by Bangladesh Computer Society. Achieved Global Rank: #54 (team) and placed in the Global Top 10 in a 48-hour cybersecurity competition.
+    meta: "Domain: CTF"
     cer: "/cer/bcs-ctf-2026.jpg"
 
   - title: "V1T CTF 2026"
@@ -26,31 +26,31 @@ ctf:
     date: "2026"
     description: >
       Certificate of Participation - V1T CTF 2026. Player: zerod (Team: NovaRun). Rank: 136th / 951.
-    meta: "Lĩnh vực: CTF"
+    meta: "Domain: CTF"
     cer: "/cer/v1tctf2026.png"
 
   - title: "0xV01D CTF"
     stamp: "CERTIFICATE"
     date: "2026"
     description: >
-      Jordanian Cybersecurity Competition: 0xV01D CTF. Certificate of Participation presented to Team NovaRun. Đạt Hạng 44th Place.
-    meta: "Lĩnh vực: CTF"
+      Jordanian Cybersecurity Competition: 0xV01D CTF. Certificate of Participation presented to Team NovaRun. Finished at 44th Place.
+    meta: "Domain: CTF"
     cer: "/cer/0xv01d_ctf.jpg"
 
   - title: "TJCTF 2026 Certificate"
     stamp: "CERTIFICATE"
     date: "2026"
     description: >
-      Chứng nhận hoàn thành và tham gia giải thi đấu TJCTF 2026.
-    meta: "Lĩnh vực: CTF"
+      Certificate of Participation and Completion for the TJCTF 2026 competition.
+    meta: "Domain: CTF"
     cer: "/cer/tjctf-2026-certificate-Le_Minh_Nhut (1).pdf"
 
   - title: "BroncoCTF 2026"
     stamp: "CERTIFICATE"
     date: "2026"
     description: >
-      Santa Clara University's 7th CTF: BroncoCTF 2026. Player zeroD (Team NovaRun). Đạt Hạng #94, hoàn thành 40/45 thử thách.
-    meta: "Lĩnh vực: CTF"
+      Santa Clara University's 7th CTF: BroncoCTF 2026. Player zeroD (Team NovaRun). Ranked #94, solving 40/45 challenges.
+    meta: "Domain: CTF"
     cer: "/cer/broncoctf.png"
 
 ai:
@@ -58,10 +58,10 @@ ai:
     stamp: "TOP 500"
     date: "2026"
     description: >
-      Dự án được chọn vào Top 500 dự án AI Riser Vietnam 2026 —
-      chương trình do Google tổ chức nhằm khuyến khích xây dựng
-      các sản phẩm AI thực tế. Nhận bộ quà tặng Silver Tier.
-    meta: "Lĩnh vực: AI · Tổ chức: Google"
+      Selected among the Top 500 projects in AI Riser Vietnam 2026 — an initiative
+      organized by Google to empower developers to build practical AI applications.
+      Awarded the Silver Tier gift set.
+    meta: "Domain: AI · Organizer: Google"
     cer: "/cer/ai-riser.pdf"
 
 academic:
@@ -69,19 +69,19 @@ academic:
     stamp: "VERIFIED"
     date: "11/2026"
     description: >
-      Chứng chỉ hoàn thành khóa học Networking Basics được cấp bởi Cisco Networking Academy. Khóa học bao gồm các kiến thức nền tảng về mạng máy tính, giao thức mạng (IPv4, IPv6, TCP/IP, Ethernet), kiến trúc mạng và cấu hình thiết bị mạng cơ bản.
-    meta: "Lĩnh vực: Networking · Tổ chức: Cisco Networking Academy"
+      Course completion certificate for Networking Basics issued by Cisco Networking Academy. Covers fundamental computer networking concepts, network protocols (IPv4, IPv6, TCP/IP, Ethernet), network architecture, and basic device configuration.
+    meta: "Domain: Networking · Organizer: Cisco Networking Academy"
     cer: "/cer/NetworkingBasicsUpdate20261113-21-rbi0y3.pdf"
 
   - title: "Professional Certification"
     stamp: "CERTIFIED"
     date: "2026"
     description: >
-      Chứng nhận chuyên môn (Certified Certificate).
-    meta: "Lĩnh vực: Security / IT"
+      Professional Certificate in Cybersecurity / Information Technology.
+    meta: "Domain: Security / IT"
     cer: "/cer/certified_certificate.pdf"
 
 pending:
-  - "Giải CTF cá nhân"
-  - "Chứng chỉ / Certification khác"
-  - "Bug bounty / CVE"
+  - "Individual CTF Awards"
+  - "Upcoming Professional Certifications"
+  - "Bug Bounty / CVE Disclosures"

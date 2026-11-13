@@ -9,7 +9,7 @@ permalink: /log/
     <p class="eyebrow">Case File · Log</p>
     <h1 style="font-size:clamp(28px,5vw,42px);">Case Log</h1>
     <p class="tagline">
-      Writeup CTF, note kỹ thuật và nhật ký học tập.
+      CTF writeups, technical notes, and study logs.
     </p>
   </div>
 </section>
@@ -25,7 +25,7 @@ permalink: /log/
           <div class="entry">
             <a href="{{ post.url | relative_url }}" class="title-link">{{ post.title }}</a>
             {% if post.repo_url %}
-              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" class="repo-link" onclick="event.stopPropagation();" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
+              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" class="repo-link" onclick="event.stopPropagation();" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Open GitHub Repo ↗]</a>
             {% endif %}
             {% if post.excerpt %}<div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
           </div>
@@ -46,7 +46,7 @@ permalink: /log/
           <div class="entry">
             <a href="{{ post.url | relative_url }}" class="title-link">{{ post.title }}</a>
             {% if post.repo_url %}
-              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" class="repo-link" onclick="event.stopPropagation();" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Mở Repo GitHub ↗]</a>
+              <a href="{{ post.repo_url }}" target="_blank" rel="noopener" class="repo-link" onclick="event.stopPropagation();" style="margin-left: 10px; font-size: 13px; color: var(--evidence); text-decoration: none;">[Open GitHub Repo ↗]</a>
             {% endif %}
             {% if post.excerpt %}<div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 26 }}</div>{% endif %}
           </div>
@@ -58,7 +58,7 @@ permalink: /log/
       {% endfor %}
     </div>
     {% if site.posts.size == 0 %}
-    <p style="color:var(--paper-dim);">Chưa có bài viết nào. Thêm file mới trong <code style="font-family:var(--font-mono);color:var(--evidence);">_posts/</code>.</p>
+    <p style="color:var(--paper-dim);">No log entries found. Add new files to <code style="font-family:var(--font-mono);color:var(--evidence);">_posts/</code>.</p>
     {% endif %}
   </div>
 </section>

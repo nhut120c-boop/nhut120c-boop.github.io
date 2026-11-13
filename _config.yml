@@ -1,4 +1,4 @@
-title: "Lê Minh Nhựt"
+title: "Le Minh Nhut"
 short_name: "LMN"
 tagline: "InfoSec Student — Blue Team / SOC / DFIR"
 description: "Case file & log of Le Minh Nhut — Information Security student at KMA, Blue Team / SOC / DFIR, CTF Team Lead for NovaRun."
@@ -7,9 +7,9 @@ github_username: nhut120c-boop
 url: ""
 baseurl: ""
 
-# ---- Bio / status line (dùng ở trang chủ) ----
+# ---- Bio / status line (used on homepage) ----
 role: "Information Security Student"
-org: "KMA — Học viện Kỹ thuật Mật mã"
+org: "KMA — Academy of Cryptography Techniques"
 team: "NovaRun (Team Lead)"
 focus_line: "Blue Team / SOC / DFIR / Incident Response"
 case_no: "LMN-2026"

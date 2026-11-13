@@ -8,32 +8,32 @@ public_folder: "/assets/images"
 
 collections:
   - name: "posts"
-    label: "Case Log (Bài viết & Writeup)"
+    label: "Case Log (Posts & Writeups)"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Tiêu đề", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list", default: ["writeup", "ctf"]}
-      - {label: "Nội dung", name: "body", widget: "markdown", default: "{% raw %}\n\nViết nội dung bài giải CTF hoặc Note ở đây (nhớ giữ nguyên 2 dòng raw và endraw để không bị lỗi flag nhé!)...\n\n{% endraw %}"}
+      - {label: "Body", name: "body", widget: "markdown", default: "{% raw %}\n\nWrite your CTF writeup or study note here...\n\n{% endraw %}"}
 
   - name: "projects"
-    label: "Projects (Dự án)"
+    label: "Projects"
     folder: "_projects"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Tiêu đề", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list", default: ["project"]}
       - {label: "Repo URL", name: "repo_url", widget: "string", required: false}
-      - {label: "Nội dung", name: "body", widget: "markdown", default: "Mô tả chi tiết về dự án..."}
+      - {label: "Body", name: "body", widget: "markdown", default: "Detailed project description..."}
 
   - name: "exhibits"
-    label: "Exhibits (Chứng chỉ & CTF)"
+    label: "Exhibits (Certificates & CTF)"
     files:
-      - label: "Danh sách Exhibits"
+      - label: "Exhibits List"
         name: "exhibits_data"
         file: "_data/exhibits.yml"
         fields:
@@ -41,15 +41,15 @@ collections:
             name: "ctf"
             widget: "list"
             fields:
-              - {label: "Tên giải", name: "name", widget: "string"}
-              - {label: "Loại (Hình ảnh / PDF)", name: "type", widget: "string"}
-              - {label: "Đường dẫn File (Hoặc Tải ảnh lên)", name: "url", widget: "file"}
-              - {label: "Mô tả", name: "desc", widget: "string"}
+              - {label: "Event Name", name: "name", widget: "string"}
+              - {label: "Type (Image / PDF)", name: "type", widget: "string"}
+              - {label: "File Path (or Upload)", name: "url", widget: "file"}
+              - {label: "Description", name: "desc", widget: "string"}
           - label: "Academic Exhibits"
             name: "academic"
             widget: "list"
             fields:
-              - {label: "Tên chứng chỉ", name: "name", widget: "string"}
-              - {label: "Loại (Hình ảnh / PDF)", name: "type", widget: "string"}
-              - {label: "Đường dẫn File (Hoặc Tải ảnh lên)", name: "url", widget: "file"}
-              - {label: "Mô tả", name: "desc", widget: "string"}
+              - {label: "Certificate Name", name: "name", widget: "string"}
+              - {label: "Type (Image / PDF)", name: "type", widget: "string"}
+              - {label: "File Path (or Upload)", name: "url", widget: "file"}
+              - {label: "Description", name: "desc", widget: "string"}
